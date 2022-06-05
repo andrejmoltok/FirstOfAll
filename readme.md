@@ -1,1 +1,1 @@
-###Typescript Gyakorlatok###
+***Typescript Gyakorlatok***
