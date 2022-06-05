@@ -9,5 +9,6 @@ let fourthElem = numbers.map(function(fourthElem){
     return fourthElem;
 })
 
-console.log(fourthElem);
-console.log(numbers[3]);
+console.log("Old array was [1,2,3,8,5,6]");
+console.log("New array is: " + fourthElem);
+console.log("Number changed to: " + numbers[3]);
