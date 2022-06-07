@@ -12,18 +12,23 @@
  //  
  // - Print this two dimensional list to the output
 
-const matrix: number[] = [];
+let matrix: number[][] = [];
 let value:number;
+let dim = 4;
 
-for (let i=0;i<4;i++){
-    for (let j=0;j<4;j++){
+for (let i=0; i<dim; i++){
+    let mat1: number[] = [];
+    for (let j=0; j<dim; j++){
         if (i==j) {
             value = 1;
         }
         else {
             value = 0;
         }
-        matrix.push(value);
+        mat1.push(value);
     }
+    matrix.push(mat1);
 }
+
 console.log(matrix);
+console.table(matrix);
