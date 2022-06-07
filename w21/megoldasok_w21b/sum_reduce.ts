@@ -20,4 +20,4 @@
 
 //console.log(redsum);
 
-console.log([1,2,3,4,5,6].reduce((p,c) => p+c,0));
+console.log([1,2,3,4,5,6].reduce((p, c, i, a) => p+c,0));

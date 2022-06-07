@@ -12,7 +12,7 @@
  //  
  // - Print this two dimensional list to the output
 
-let mymatrix:number[] = [];
+const matrix: number[] = [];
 let value:number;
 
 for (let i=0;i<4;i++){
@@ -23,7 +23,7 @@ for (let i=0;i<4;i++){
         else {
             value = 0;
         }
-        mymatrix.push(value);
+        matrix.push(value);
     }
 }
-console.log(mymatrix);
+console.log(matrix);
