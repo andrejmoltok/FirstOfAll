@@ -1,0 +1,19 @@
+//Callback function is a function called inside a function as an argument
+
+
+function calculate(num1, num2, aritmeta) {
+  num2 = num2/3;
+  num1 = num1-2;
+  return aritmeta(num1, num2)
+}
+
+function calcProduct(num1, num2) {
+  return num1 * num2;
+}
+
+function calcSum(num1, num2) {
+  return num1 + num2;
+}
+
+console.log(calculate(5, 15, calcProduct));
+console.log(calculate(5, 15, calcSum));
