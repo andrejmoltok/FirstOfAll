@@ -54,7 +54,7 @@ console.log(prodsUnder201(prods));
 function prodsOver150(prods:Map<string,number>){
 
     let idx = Array.from(prods.keys()).filter((e,i) => Array.from(prods.values())[i]>150);
-    let val = Array.from(prods.values()).filter((e,i) => Array.from(prods.values())[i]>150);
+    let val = Array.from(prods.values()).filter((e,i) => e>150);
     let pO150:string = "";
     for (let k=0;k<idx.length;k++){
         pO150 += String(k+1)+"."+(idx[k])+" = "+(val[k])+"\n";
