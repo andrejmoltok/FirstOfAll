@@ -96,7 +96,7 @@ let comp1 = prodKeyArr.filter(v => Array.from(BobList.keys()).includes(v));
 let comp2 = comp1.map((e,i) => prodValArr[i]*Array.from(BobList.values())[i]);
 let sum = comp2.reduce((p,c) => p+=c,0);
 console.log("Bob pays in total of: ",sum);
-
+console.log("\n");
 //   - How much does Alice pay?
 
 let AliceKeys = Array.from(AliceList.keys());
@@ -119,7 +119,7 @@ for (let x=0;x<=idxArr.length-1;x++){
 let AliceValues = Array.from(AliceList.values());
 let sum2 = comp4.reduce((p,c,i) => p+= c*AliceValues[i],0);
 console.log("Alice pays in total of: ",sum2);
-
+console.log("\n");
 
 //   - Who buys more Rice?
 let BobAmount = Array.from(BobList.values());
@@ -140,6 +140,7 @@ let AliceRiceAmnt = AliceListAmount[idxRiceAlice];
     {   
         console.log("Alice buys more Rice, exactly "+AliceRiceAmnt+" pieces.");
     }
+    console.log("\n");
 //   - Who buys more Potato?
 let idxPotBob = BobKeys.indexOf('Potato');
 let idxPotAlice = AliceKeys.indexOf('Potato');
@@ -156,23 +157,29 @@ let AlicePotAmnt = AliceValues[idxPotAlice];
     {   
         console.log("Alice buys more Potato, exactly "+AlicePotAmnt+" pieces.");
     }
+    console.log("\n");
+
 //   - Who buys more different products?
 let BobLen = BobKeys.length;
 let AliceLen = AliceKeys.length; 
-if (BobLen > AliceLen) {
-    console.log("Bob has "+BobLen+" kind of products on his list. He buys more different products.");
-}
-else
-{
-    console.log("Alice buys more different products, "+AliceLen+" kind of products on her list.");
-}   
+    if (BobLen > AliceLen) {
+        console.log("Bob has "+BobLen+" kind of products on his list. \n",
+        "Alice has only "+AliceLen+" kind of products.");
+    }
+    else
+    {
+      console.log("Alice buys more different products, "+AliceLen+" kind of products on her list.");
+    }   
+    console.log("\n");
+
 //   - Who buys more products? (more pieces)
 let BobPieces = BobListAmount.reduce((p,c,i) => p+=c,0);
 let AlicePieces = AliceListAmount.reduce((p,c,i) => p+=c,0);
-if (BobPieces > AlicePieces){
-    console.log("Bob buys more pieces of products, "+BobPieces);
-}
-else
-{
-    console.log("Alice buys more pieces of products, "+AlicePieces);
-}
+    if (BobPieces > AlicePieces){
+        console.log("Bob buys more pieces of products, "+BobPieces+" pieces in total.");
+    }
+    else
+    {
+        console.log("Alice buys more pieces of products, "+AlicePieces+" pieces in total.\n",
+        "Bob has only "+BobPieces+" pieces.");
+    }
