@@ -27,7 +27,7 @@ var list = new Array();
 
 function draw(list){
     ctx.beginPath();
-    ctx.moveTo(list[i][0],list[i][1]);
+    ctx.moveTo(list[0][0],list[0][1]);
 
     for (let j=1; j<=list.length-1; j++){
         ctx.lineTo(list[j][0],list[j][1]);
