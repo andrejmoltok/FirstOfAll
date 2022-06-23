@@ -14,16 +14,15 @@ const ctx = canvas.getContext('2d');
 var w = canvas.width;
 var h = canvas.height;
 
-for (let i=0; i<=h; i = i + 50){
-    //0,i => w,0
-    //0,50 => w,0
-    ctx.fillStyle = "rgb("+(255*Math.random())+","+(255*Math.random())+","+(255*Math.random())+")";
-    ctx.fillRect(0,i,w,i);
-}
-
 function rainbow(size,color){
     let centerX = canvas.width / 2;
     let centerY = canvas.height / 2;
+    for (let i=0; i<=h; i = i + 50){
+        //0,i => w,0
+        //0,50 => w,0
+        ctx.fillStyle = "rgb("+(255*Math.random())+","+(255*Math.random())+","+(255*Math.random())+")";
+        ctx.fillRect(0,i,w,i);
+    }
     ctx.fillStyle = color;
     ctx.fillRect(centerX-(size/2),centerY-(size/2),size,size);
 }
