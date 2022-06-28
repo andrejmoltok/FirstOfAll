@@ -15,7 +15,7 @@ class Counter {
     }
 
     public get(){
-        return console.log(this._counterField);
+        return this._counterField;
     }
 
     public reset(){
