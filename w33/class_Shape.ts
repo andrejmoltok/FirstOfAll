@@ -1,17 +1,17 @@
 class Shape {
 
-    private name:string;
-    private sides:number;
-    private sideLength:number;
+    private _name:string;
+    private _sides:number;
+    private _sideLength:number;
   
     constructor(name:string,sides:number,sideLength:number){
-        this.name = name;
-        this.sides = sides;
-        this.sideLength = sideLength;
+        this._name = name;
+        this._sides = sides;
+        this._sideLength = sideLength;
     }
 
     public calcPerimeter(){
-        console.log('Perimeter is:',this.sideLength*this.sides);
+        console.log('Perimeter is:',this._sides * this._sideLength);
     }
 
 }

@@ -7,11 +7,11 @@ class BlogPost {
     private _text: string;
     private _publicationDate: string;
 
-    constructor(_authorName: string, _title: string, _text: string, _publicationDate: string){
-        this._authorName = _authorName;
-        this._title = _title;
-        this._text = _text;
-        this._publicationDate = _publicationDate;
+    constructor(authorName: string, title: string, text: string, publicationDate: string){
+        this._authorName = authorName;
+        this._title = title;
+        this._text = text;
+        this._publicationDate = publicationDate;
     }
 
     public getauthorName(){

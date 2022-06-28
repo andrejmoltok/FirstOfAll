@@ -6,10 +6,10 @@ class PostIt {
     public _text: string;
     public _textColor: string;
 
-    constructor(_backgroundColor:string,_text: string,_textColor: string){
-        this._backgroundColor = _backgroundColor;
-        this._text = _text;
-        this._textColor = _textColor;
+    constructor(backgroundColor:string,text: string,textColor: string){
+        this._backgroundColor = backgroundColor;
+        this._text = text;
+        this._textColor = textColor;
     }
 }
 
