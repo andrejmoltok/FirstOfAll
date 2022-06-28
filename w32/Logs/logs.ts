@@ -6,6 +6,8 @@
 var fs = require('fs');
 
 function IPlogger(file:string){
+    try
+    {
     //read file
     let logi:string = fs.readFileSync(file, 'utf-8');
 
@@ -42,7 +44,6 @@ function IPlogger(file:string){
     
     let kulcs = Array.from(Object.keys(counted));
     let ertek = Array.from(Object.values(counted));
-    let temp2 = new Array();
     let final = new Array();
 
     //return every key, which value equals to 1
@@ -52,6 +53,10 @@ function IPlogger(file:string){
         }
     }
     console.log("Unique IP addresses:",final);
+    }
+    catch (error) {
+        console.log(error);
+    }
 }
 
 IPlogger('log.txt');
