@@ -20,7 +20,7 @@ class BlogPost {
 
     public setauthorName(value: string){
         this._authorName = value;
-        return ''
+        return 'Value set!'
     }
 
     public getTitle(){
@@ -29,7 +29,7 @@ class BlogPost {
 
     public setTitle(value: string){
         this._title = value;
-        return ''
+        return 'Value set!'
     }
 
     public getText(){
@@ -38,7 +38,7 @@ class BlogPost {
 
     public setText(value: string){
         this._text = value;
-        return ''
+        return 'Value set!'
     }
 
     public getPubDate(){
@@ -47,16 +47,13 @@ class BlogPost {
 
     public setPubDate(value: string){
         this._publicationDate = value;
-        return ''
+        return 'Value set!'
     }
 }
 
 let first = new BlogPost('John Doe','Lorem ipsum','Lorem ipsum dolor sit amet.','2000.05.04.');
 let second = new BlogPost('Tim Urban','Wait but why','A popular long-form, stick-figure-illustrated blog about almost everything.','2010.10.10.');
 let third = new BlogPost('William Turton','One Engineer Is Trying to Get IBM to Reckon With Trump','Daniel Hanley, a cybersecurity engineer at IBM, doesn’t want to be the center of attention. When I asked to take his picture outside one of IBM’s New York City offices, he told me that he wasn’t really into the whole organizer profile thing.','2017.03.28.');
-
-
-
 
 console.log(first);
 console.log(first.getauthorName());
@@ -66,5 +63,4 @@ console.log(second.getTitle());
 console.log(second.setTitle("What's going on?"));
 console.log(second.setPubDate('2022.06.28'));
 console.log(second);
-
 console.log(third);
