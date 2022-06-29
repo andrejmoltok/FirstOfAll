@@ -1,1 +1,1 @@
-***Typescript+Javascript+HTML Gyakorlatok***
+***Typescript Gyakorlatok***
