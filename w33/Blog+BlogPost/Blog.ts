@@ -4,7 +4,11 @@ import {BlogPost} from "./BlogPost"
 
 class Blog {
 
-    private _blogposts: BlogPost[] = [];
+    private _blogposts: BlogPost[];
+
+    constructor(){
+        this._blogposts = [];
+    }
 
     public add(blogpost: BlogPost):any{
         return this._blogposts.push(blogpost);
@@ -14,31 +18,13 @@ class Blog {
         return this._blogposts;
     }
 
-    public update(idx: number,blogpost: BlogPost){
-        this.delete(idx);
-        this.add(blogpost);
-        let temp = this._blogposts[this._blogposts.indexOf(blogpost)];
-        this._blogposts[this._blogposts.indexOf(blogpost)] = this._blogposts[idx];
-        this._blogposts[idx] = temp;
+    public update(index: number,blogpost: BlogPost){
+        this._blogposts.splice(index,1,blogpost);
         return this._blogposts;
     }
 
     public delete(index:number){
-        if (index > 0 && index < this._blogposts.length-1){
-            let temp = this._blogposts[index];
-            for (let i=1; i<=this._blogposts.length-1; i++){
-            this._blogposts[index] = this._blogposts[index-i];            
-        }
-            this._blogposts.shift();
-        }
-        else if (index == 0)
-        {
-            this._blogposts.shift();
-        }
-        else if (index == this._blogposts.length-1)
-        {
-            this._blogposts.pop();
-        }
+        this._blogposts.splice(index,1);
         return this._blogposts;
     }
 
@@ -66,6 +52,7 @@ console.log("Added fifth: ",blogger.add(fifth));
 console.log("Added sixth: ",blogger.add(sixth));
 
 console.log("Get contents: ",blogger.get());
+
 console.log("Get length: ",blogger.len());
 
 console.log("delete one element: ",blogger.delete(2));
@@ -73,6 +60,5 @@ console.log("delete one element: ",blogger.delete(2));
 console.log("update blog: ",blogger.update(3,fourth));
 
 console.log("Blog contents: ",blogger);
-
 
 console.log("Get length: ",blogger.len());
