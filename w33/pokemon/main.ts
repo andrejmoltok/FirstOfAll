@@ -20,7 +20,7 @@ function chooseEffective(collection:any,newPoke:any){
     //look for effectiveAgainst type of the new Pokemon class
     //newPokemon is wildPokemon new instance of Pokemon class
     for (let i=0; i<=collection.length-1; i++){
-        if (collection[i].effectiveAgainst == newPoke.type){
+        if (collection[i].isEffectiveAgainst(newPoke)){
             return collection[i].name;
         }
     }
