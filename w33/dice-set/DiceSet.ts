@@ -56,26 +56,24 @@ let diceSet = new DiceSet([]);
 // diceSet.reroll();
 // console.log(diceSet.getCurrent());
 // console.log("------------------");
-
-
-
-// const isSix = (currVal:number) => currVal = 6;
-
-// console.log(this.dice.forEach(isSix));
-
-// {(() => console.log(diceSet.getCurrent(i));}
+diceSet.roll();
 
 let arr = Array.from(Object.values(diceSet))[1];
 
-diceSet.roll();
+// for (let i=0; i<=arr.length-1; i++){
+//   if (arr[i] < 6){
+//     diceSet.reroll(i);
+//   }
+//   console.log(arr);
+// }
 
-for (let i=0; i<=arr.length-1; i++){
-  if (arr[i] < 6){
-    diceSet.reroll(i);
+for (const elem of arr){
+  if (arr[elem] < 6){
+    diceSet.reroll();
   }
-console.log(arr);
+  console.log(arr);
 }
 
-diceSet.reroll();
+//diceSet.reroll();
 
-console.log(arr.map((v:number,i:number) => (v<6)? diceSet.reroll(v) : v));//??????? 
+//console.log(arr.map((v:number,i:number) => (v<6)? diceSet.reroll(i) : v));//??????? 
