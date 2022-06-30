@@ -33,16 +33,7 @@ class DiceSet {
   }
 
   setAllSix():void{
-    let i=0;
-    do {
-      this.reroll(i);
-      i++;
-      if (i=6){
-        i=0;
-      }
-    } while (this.getCurrent(i) != 6);
-    console.log(this.getCurrent());
-  
+    this.dice.map((v,i) => (v<6)? this.reroll(v) : v);
   }
 }
 
