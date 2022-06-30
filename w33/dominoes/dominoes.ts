@@ -20,19 +20,18 @@ function print(dominoes: Domino[]) {
 
 //sortirozo funkciot kell irni
 //pl.:[5,2],[2,4],[4,6],[6,7],[7,1],[1,5]
-    function sorter(input:any){
-        for (let i=0; i<=input.length-1; i++){
-            for (let j=0; j<=input.length-1; i++){
-                if (input[i][j+1] = input[i+1][j]){
-                    console.log(input[i][j+1]+":"+input[i+1][j]);
-                }
-            }
-        }
+
+function sorter(input:any){
+    for (let i=0; i<=input.length-1; i++){
+            
     }
+}
 
 let dominoes = initializeDominoes();
+// console.log(dominoes.pop()?.read(1));
+// console.log(dominoes.pop()?.read(0));
 
-sorter(dominoes);
+//sorter(dominoes);
 
 /** You have the list of Dominoes */
 /** Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides */
@@ -40,13 +39,9 @@ sorter(dominoes);
 
 //print(dominoes);
 
-console.log((dominoes)[0]);
-console.log((dominoes)[4]);
-console.log((dominoes)[1]);
-console.log((dominoes)[3]);
-console.log((dominoes)[5]);
-console.log((dominoes)[2]);
-
-//[5,2],[2,4],[4,6],[6,7],[7,1],[1,5]
-
-//console.log(sorter(dominoes));
+console.log((dominoes)[0].read(0));
+console.log((dominoes)[0].read(1));
+// console.log((dominoes)[1]);
+// console.log((dominoes)[3]);
+// console.log((dominoes)[5]);
+// console.log((dominoes)[2]);
