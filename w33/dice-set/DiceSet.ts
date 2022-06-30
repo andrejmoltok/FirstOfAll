@@ -31,6 +31,17 @@ class DiceSet {
       return this.dice[index];
     }
   }
+
+  // getAllSix():void{
+  //   const isSix = (currVal:number) => currVal = 6;
+  //   this.dice.every(isSix);
+  //   // for (let i=0; i<=this.dice.length-1; i++){
+  //   //   if (diceSet.getCurrent(i) != 6){
+  //   //   diceSet.reroll(i);
+  //   //   }
+  //   //   console.log(diceSet.getCurrent());
+  //   // }
+  // }
 }
 
 // You have a `DiceSet` class which has a list for 6 dice
@@ -47,11 +58,15 @@ let diceSet = new DiceSet([]);
 // diceSet.reroll();
 // console.log(diceSet.getCurrent());
 // console.log("------------------");
+//diceSet.roll();
 
-//reroll until every diceSet.getCurrent(i) = 6
-for (let i=0; i<=diceSet.length-1; i++){
-  if (diceSet.getCurrent(i) != 6){
-  diceSet.reroll();
-  }
-  diceSet.getCurrent();
-}
+// const isSix = (currVal:number) => currVal = 6;
+// console.log(this.dice.forEach(isSix));
+
+//console.log(diceSet.getAllSix());
+
+console.log((typeof diceSet));
+//console.log(Object.keys(diceSet));
+console.log(Array.from(Object.values(diceSet))[1]);
+
+// {(() => console.log(diceSet.getCurrent(i));}
