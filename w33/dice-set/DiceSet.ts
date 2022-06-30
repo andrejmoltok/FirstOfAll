@@ -33,9 +33,8 @@ class DiceSet {
   }
 
   setAllSix():void{
-    let arr = Array.from(Object.values(this.dice))[1];
-    for (let i=0; i<=arr.length-1; i++){      
-      if (arr[i] !== 6){
+    for (let i=0; i<this.numOfDices; i++){      
+      if (diceSet.getCurrent(i) !== 6){
         diceSet.reroll(i);        
       }
       console.log(diceSet.getCurrent());
@@ -65,15 +64,17 @@ diceSet.roll();
 // diceSet.reroll();
 // console.log(diceSet.getCurrent());
 
-let arr = Array.from(Object.values(diceSet))[1];
+// let arr = Array.from(Object.values(diceSet))[1];
 
-console.log(Object.values(diceSet));
+// console.log(Object.values(diceSet));
 
-console.log(arr);
+// console.log(arr);
+
+//console.log(diceSet.getCurrent());
 
 //do reroll() until arr[i] = 6
 
-//diceSet.setAllSix();
+diceSet.setAllSix();
 
 //console.log(arr.map((v:number,i:number) => (v<6)? diceSet.reroll(i) : v));//???????
 
