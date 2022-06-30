@@ -33,12 +33,11 @@ class DiceSet {
   }
 
   setAllSix():void{
-    for (let i=0; i<this.numOfDices; i++){      
-      if (diceSet.getCurrent(i) !== 6){
-        diceSet.reroll(i);        
-      }
-      console.log(diceSet.getCurrent());
-    }
+    let i=0;
+    do {
+      this.reroll(i);
+      i++;
+    } while (this.getCurrent(i) != 6);
   }
 }
 
@@ -74,7 +73,7 @@ diceSet.roll();
 
 //do reroll() until arr[i] = 6
 
-diceSet.setAllSix();
+console.log(diceSet.setAllSix());
 
 //console.log(arr.map((v:number,i:number) => (v<6)? diceSet.reroll(i) : v));//???????
 
