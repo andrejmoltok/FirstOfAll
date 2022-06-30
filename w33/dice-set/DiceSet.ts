@@ -32,10 +32,11 @@ class DiceSet {
     }
   }
 
-  getAllSix():void{
-    for (let i=0; i<=this.dice.length-1; i++){
-      if (diceSet.getCurrent(i) != 6){
-      diceSet.reroll(i);
+  setAllSix():void{
+    let arr = Array.from(Object.values(this.dice))[1];
+    for (let i=0; i<=arr.length-1; i++){      
+      if (arr[i] !== 6){
+        diceSet.reroll(i);        
       }
       console.log(diceSet.getCurrent());
     }
@@ -56,24 +57,40 @@ let diceSet = new DiceSet([]);
 // diceSet.reroll();
 // console.log(diceSet.getCurrent());
 // console.log("------------------");
+
 diceSet.roll();
+
+// console.log(diceSet.getCurrent());
+
+// diceSet.reroll();
+// console.log(diceSet.getCurrent());
 
 let arr = Array.from(Object.values(diceSet))[1];
 
+console.log(Object.values(diceSet));
+
+console.log(arr);
+
+//do reroll() until arr[i] = 6
+
+//diceSet.setAllSix();
+
+//console.log(arr.map((v:number,i:number) => (v<6)? diceSet.reroll(i) : v));//???????
+
 // for (let i=0; i<=arr.length-1; i++){
 //   if (arr[i] < 6){
-//     diceSet.reroll(i);
+//     for (let j=0; j<=arr.length-1; j++){
+//       diceSet.reroll();
+//     }
 //   }
 //   console.log(arr);
 // }
 
-for (const elem of arr){
-  if (arr[elem] < 6){
-    diceSet.reroll();
-  }
-  console.log(arr);
-}
+// for (const elem of arr){
+//   if (arr[elem] < 6){
+//     diceSet.reroll();
+//   }
+//   console.log(arr);
+// }
 
-//diceSet.reroll();
-
-//console.log(arr.map((v:number,i:number) => (v<6)? diceSet.reroll(i) : v));//??????? 
+// console.log(Math.floor(Math.random() * 6 + 1));
