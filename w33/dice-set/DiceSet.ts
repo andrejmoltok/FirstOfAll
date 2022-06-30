@@ -1,10 +1,6 @@
 class DiceSet {
-  private dice: number[];
+  private dice: number[] = [];
   readonly numOfDices: number = 6;
-
-  constructor(dice:number[]){
-    this.dice = dice;
-  }
 
   roll(): number[] {
     this.dice = [];
@@ -43,15 +39,11 @@ class DiceSet {
 // You can reroll with reroll()
 // Your task is to roll the dice until all of the dice are 6
 
-let diceSet = new DiceSet([]);
+let diceSet = new DiceSet();
 
-// console.log("------------------");
-// diceSet.roll();
-// console.log(diceSet.getCurrent());
-// diceSet.reroll();
-// console.log(diceSet.getCurrent());
-// console.log("------------------");
-
-diceSet.roll();
-
-console.log(diceSet.setAllSix());
+console.log("------------------");
+console.log(diceSet.roll());
+console.log(diceSet.getCurrent());
+diceSet.setAllSix();
+console.log(diceSet.getCurrent());
+console.log("------------------");
