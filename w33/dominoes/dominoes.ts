@@ -20,22 +20,21 @@ function print(dominoes: Domino[]) {
 
 //sortirozo funkciot kell irni
 //pl.:[5,2],[2,4],[4,6],[6,7],[7,1],[1,5]
-function sorter(input:any):void{
-    //     //open domino set and read values
-    //     //arrange dominoes based on equal values
-    //     //if One's last equals to Second's first
-    //     //put them next to eachother
-    let temp = new Array();
-    for (let i=0; i<=input.length-1; i++){
-        temp[i] = "";
-        if (input[i].read(1) = input[i+1].read(0)) {
-            temp[i] += input[i];
+
+function sorter(arr:any[]){ 
+    arr.map((v,i) => {v.values 
+    for (let i=0;i<v.values.length;i++){ 
+        for (let j=1;j<v.values.length;j++){
+            let empty:number[] = [];       
+            if (v[i][j]=v[i+1][i]){//[5,2][1]==[2,4][0]
+                empty = v[i][j];
+                v[i][j] = v[i+1][i];
+                v[i+1][i] = empty;
             }
-    }
-    for (let x=0; x<=temp.length-1; x++){
-        console.log(temp[x]);
-    }
-    }
+        }
+    }   
+    })   
+}
 
 
 let dominoes = initializeDominoes();
@@ -49,7 +48,9 @@ let dominoes = initializeDominoes();
 
 //console.log(dominoes.map((v,i) => {console.log(v.values)}));
 
-sorter(dominoes); 
+//console.log(Array.from(Object.values(dominoes)).sort(function(a,b){return(b-a)}));
+
+sorter(dominoes);
 
 
 
