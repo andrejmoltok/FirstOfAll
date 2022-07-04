@@ -19,18 +19,18 @@ class Station {
         if (car._gasAmount == car._capacity){
             //kiszamolja a jelenlegi benzin mennyuseget
             console.log("Tank is running low...",car._gasAmount = car._gasAmount - car._capacity);
-            //kiirja az uj Car class nevet es hol tankoljon
-            console.log(car._name + "'s tank is empty. Refill at Station " + this._name);
             //random uzenet
-            return "Your tank is empty.";
+            console.log("Your tank is empty.");
+            //kiirja az uj Car class nevet es hol tankoljon
+            return (car._name + "'s tank is empty. Refill at Station " + this._name);
         }
         else //(car._gasAmount == 0)
         {   //kiszamolja hogy mennyit lehet bele tankolni
-            console.log("Refilling...", car._gasAmount = car._gasAmount + car._capacity);
-            //kiirja az uj Car class nevet es hol tankolt
-            console.log(car._name + "'s tank is refilled at Station " + this._name);
+            console.log("Refilling with ", car._gasAmount = car._gasAmount + car._capacity, " to the capacity of " + car._capacity);
             //random uzenet
-            return "Refill complete!";
+            console.log("Refill complete!");
+            //kiirja az uj Car class nevet es hol tankolt
+            return (car._name + "'s tank was refilled at Station " + this._name);
         }
     }
     
