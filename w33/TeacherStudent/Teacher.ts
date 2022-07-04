@@ -4,18 +4,18 @@ import {Student} from './Student'
 
 class Teacher {
 
-    public static _name: string;
+    public _name: string;
 
     constructor(name: string){
-        Teacher._name = name;
+        this._name = name;
     }
 
-    public giveAnswer(){
-        return (Teacher._name + " is answering a question from " + Student._name);
+    public giveAnswer(name:string){
+        return (this._name + " is answering a question from " + name);
     }
 
     public teach(student: Student){
-       return student.learn();
+       return student.learn(this._name);
     }
     
     // public getName(){
