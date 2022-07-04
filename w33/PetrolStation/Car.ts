@@ -2,20 +2,16 @@
 
 import {Station} from './Station'
 
-class Car extends Station {
+class Car {
 
-    public _capacity:number;
     public _name:string;
-
+    public _gasAmount:number;
+    public _capacity:number;  
+    
     constructor(name:string, gasAmount:number, capacity:number){
-        super(gasAmount,name);
         this._name = name;
         this._gasAmount = 0;        
         this._capacity = 100;
-    }
-
-    public getname(){
-        return this._name;
     }
 
 }
