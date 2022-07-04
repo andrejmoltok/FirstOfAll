@@ -6,7 +6,7 @@ class Teacher {
 
     public static _name: string;
 
-    constructor(name:string){
+    constructor(name: string){
         Teacher._name = name;
     }
 

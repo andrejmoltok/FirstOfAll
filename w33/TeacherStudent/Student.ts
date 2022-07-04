@@ -4,9 +4,9 @@ import {Teacher} from './Teacher'
 
 class Student {
 
-    public static _name:string;
+    public static _name: string;
 
-    constructor(name:string)
+    constructor(name: string)
     {
         Student._name = name;
     }

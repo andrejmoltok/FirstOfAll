@@ -3,14 +3,14 @@
 import {Student} from './Student'
 import {Teacher} from './Teacher'
 
-let newStud = new Student("Jockey");
-let newTeach = new Teacher("Ewing");
-
-let newStud2 = new Student("Jessica");
-let newTeach2 = new Teacher("Prof.");
+let newStud = new Student("Joskabacsi");
+let newTeach = new Teacher("Lacafaca");
 
 console.log(newStud.question(newTeach));
 console.log(newTeach.teach(newStud));
 
-console.log(newStud.question(newTeach2));
-console.log(newTeach.teach(newStud2));
+let newS2 = new Student("Pitypang");
+let newT2 = new Teacher("Levendula");
+
+console.log(newS2.question(newT2));
+console.log(newT2.teach(newS2));
