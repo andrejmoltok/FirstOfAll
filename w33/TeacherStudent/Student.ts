@@ -12,16 +12,16 @@ class Student {
     }
 
     public learn(){
-       return Student._name + " is actually learning from teacher " + this.getName();
+       return Student._name + " is actually learning from teacher " + Teacher._name;
     }
 
     public question(teacher:Teacher){
        return teacher.giveAnswer();
     }
 
-    public getName(){
-        return Teacher._name;
-    }
+    // public getName(){
+    //     return Teacher._name;
+    // }
 }
 
 export {Student}
