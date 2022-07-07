@@ -33,7 +33,10 @@ class Pirate {
     //pirates are fighting with a chances of 1/3 of staying alive or dying, or both pass out
     public brawl(pirate:Pirate){
         let chance:number = (Math.floor(Math.random() * 3)+1);
-        if (this._isAlive){
+        //console.log(this._isAlive);
+        //console.log(pirate._isAlive);
+        
+        if (this._isAlive == true){
             //death chance => 1/3 chance
             if (chance == 1){
                 console.log("Defender: " + chance + "/3");
@@ -54,32 +57,39 @@ class Pirate {
     //die function returns "He's dead!", sets this._isAlive t0 false
     public die(){
         this._isAlive = false;
+        // this._drunk = 0;
         console.log("He's dead!");
     }
 }
 
 export {Pirate}
 
-let BlackJack = new Pirate();
-let Will = new Pirate();
+// let BlackJack = new Pirate();
+// let Will = new Pirate();
 
-console.log(BlackJack);
-console.log(Will);
+// console.log(BlackJack);
+// console.log(Will);
 
 
-BlackJack.drinkSomeRum();
-BlackJack.drinkSomeRum();
-BlackJack.drinkSomeRum();
-BlackJack.drinkSomeRum();
-BlackJack.drinkSomeRum();
-BlackJack.drinkSomeRum();
-BlackJack.drinkSomeRum();
-Will.drinkSomeRum();
-Will.drinkSomeRum();
+// BlackJack.drinkSomeRum();
+// BlackJack.drinkSomeRum();
+// BlackJack.drinkSomeRum();
+// //BlackJack.drinkSomeRum();
 
-BlackJack.howsItGoingMate();
-Will.howsItGoingMate();
 
-BlackJack.brawl(Will);
-console.log(BlackJack);
-console.log(Will);
+// Will.drinkSomeRum();
+// Will.drinkSomeRum();
+
+// console.log(BlackJack);
+// console.log(Will);
+
+// BlackJack.howsItGoingMate();
+// Will.howsItGoingMate();
+
+// console.log(BlackJack);
+// console.log(Will);
+
+// BlackJack.brawl(Will);
+
+// console.log(BlackJack);
+// console.log(Will);
