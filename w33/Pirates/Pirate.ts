@@ -4,7 +4,6 @@ class Pirate {
 
     private _drunk:number;
     private _isAlive:boolean;
-    private call:number = 0;
 
     constructor(){
         this._drunk = 0;
@@ -12,15 +11,12 @@ class Pirate {
     }
 
     public drinkSomeRum(){
-        var call:number = 0;
-        this._drunk++;
-        return this.call++;
+        return this._drunk++;
     }
     
     public howsItGoingMate(){
-        if (this.call < 4){
+        if (this._drunk < 4){
             console.log("Pour me anudder!");
-            //this.drinkSomeRum();
         }
         else
         {
@@ -69,6 +65,10 @@ console.log(BlackJack);
 console.log(Will);
 
 
+BlackJack.drinkSomeRum();
+BlackJack.drinkSomeRum();
+BlackJack.drinkSomeRum();
+BlackJack.drinkSomeRum();
 BlackJack.drinkSomeRum();
 BlackJack.drinkSomeRum();
 BlackJack.drinkSomeRum();
