@@ -2,30 +2,30 @@
 
 class Pirate {
 
-    private _intoxication:number;
-    private _isAlive:boolean = false;
-    public call:number = 0;
+    private _drunk:number;
+    private _isAlive:boolean;
+    private call:number = 0;
 
     constructor(){
-        this._intoxication = 0;
-        this.call = 0;
+        this._drunk = 0;
         this._isAlive = true;
     }
 
     public drinkSomeRum(){
-        this.call++;
-        return this._intoxication++;
+        var call:number = 0;
+        this._drunk++;
+        return this.call++;
     }
     
     public howsItGoingMate(){
         if (this.call < 4){
             console.log("Pour me anudder!");
-            this.drinkSomeRum();
+            //this.drinkSomeRum();
         }
         else
         {
-            while (this._intoxication > 0){
-                this._intoxication--;
+            while (this._drunk > 0){
+                this._drunk--;
             }
             console.log("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
         }
@@ -60,15 +60,24 @@ class Pirate {
     }
 }
 
+export {Pirate}
+
 let BlackJack = new Pirate();
 let Will = new Pirate();
 
+console.log(BlackJack);
+console.log(Will);
+
+
 BlackJack.drinkSomeRum();
 BlackJack.drinkSomeRum();
 BlackJack.drinkSomeRum();
-// BlackJack.drinkSomeRum();
-// BlackJack.drinkSomeRum();
+Will.drinkSomeRum();
+Will.drinkSomeRum();
 
 BlackJack.howsItGoingMate();
+Will.howsItGoingMate();
 
 BlackJack.brawl(Will);
+console.log(BlackJack);
+console.log(Will);
