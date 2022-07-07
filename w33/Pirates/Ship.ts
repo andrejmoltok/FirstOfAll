@@ -59,7 +59,7 @@ class Ship {
            }
         }
         score2 = alive2 + otherShip._crew[0]._drunk;
-        
+
         //console.log(score);
         //console.log(score2);
 
@@ -79,6 +79,7 @@ class Ship {
                 // console.log(this._crew[x]._isAlive);
                 // }
             }
+            return true;
         }
         else
         {
@@ -94,14 +95,17 @@ class Ship {
                 //     console.log(otherShip._crew[y]._isAlive);
                 // }
             }
+            return false;
         }
     }
 }
 
-let juggernaught = new Ship();
-let octopus = new Ship();
+export {Ship}
 
-octopus.fillShip();
-juggernaught.fillShip();
-juggernaught.crew(5);
-juggernaught.battle(octopus);
+// let juggernaught = new Ship();
+// let octopus = new Ship();
+
+// octopus.fillShip();
+// juggernaught.fillShip();
+// juggernaught.crew(5);
+// juggernaught.battle(octopus);
