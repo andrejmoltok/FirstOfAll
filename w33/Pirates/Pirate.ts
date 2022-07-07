@@ -10,10 +10,13 @@ class Pirate {
         this._isAlive = true;
     }
 
+    //return the drunkenness or intoxication count of pirates
     public drinkSomeRum(){
         return this._drunk++;
     }
     
+    //depending on this._drunk count return different answers
+    //and lower intoxication (pirate passes out)
     public howsItGoingMate(){
         if (this._drunk < 4){
             console.log("Pour me anudder!");
@@ -27,6 +30,7 @@ class Pirate {
         }
     }
 
+    //pirates are fighting with a chances of 1/3 of staying alive or dying, or both pass out
     public brawl(pirate:Pirate){
         let chance:number = (Math.floor(Math.random() * 3)+1);
         if (this._isAlive){
@@ -47,6 +51,7 @@ class Pirate {
         }
     }
 
+    //die function returns "He's dead!", sets this._isAlive t0 false
     public die(){
         this._isAlive = false;
         console.log("He's dead!");
