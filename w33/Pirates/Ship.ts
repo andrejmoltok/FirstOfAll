@@ -20,7 +20,7 @@ class Ship {
             for (let i=0; i<=112; i++){
                 this._crew.push(new Pirate);
             }
-            console.log("Crew member number:" + this._crew.length);
+            //console.log("Crew member number:" + this._crew.length);
             // console.log(this._crew.indexOf(cpt));
         }
         else if (this._crew.length == 113){
@@ -65,14 +65,13 @@ class Ship {
 
         if (score > score2)
         {
-            console.log("First ship won by " + score);
-            console.log("Second ship lost by " + score2);
+            console.log("First ship score " + score);
             // console.log(this._crew.forEach((elem:any) => elem._drunk += (Math.floor(Math.random() * 10))));
             // console.log(this._crew.forEach((elem:any) => console.log(elem._drunk)));
             for (let x=0; x<=this._crew.length-1; x++){
                 if (this._crew[x]._isAlive == true){
                     this._crew[x]._drunk += (Math.floor(Math.random() * 10)+1);
-                    console.log(this._crew[x]);
+                    //console.log(this._crew[x]);
                 }
                 //logold ki azokat a kalozokat akik kidoltek
                 // if (this._crew[x]._isAlive == false){
@@ -83,12 +82,11 @@ class Ship {
         }
         else
         {
-            console.log("Second ship won by " + score2);
-            console.log("First ship lost by " + score);
+            console.log("Second ship score " + score2);
             for (let y=0; y<=otherShip._crew.length-1; y++){
                 if (otherShip._crew[y]._isAlive == true){
                     otherShip._crew[y]._drunk += (Math.floor(Math.random() * 10)+1);
-                    console.log(otherShip._crew[y]);
+                    //console.log(otherShip._crew[y]);
                 }
                 //logold ki azokat a kalozokat akik kidoltek
                 // if (otherShip._crew[y]._isAlive == false){

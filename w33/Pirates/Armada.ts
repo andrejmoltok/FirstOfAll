@@ -23,16 +23,52 @@ class Armada {
     }
 
     public war(otherArmada: Armada):any{
+        // K[0,1,2,3,4] - J[0,1,2,3,4]
+        // K[0]aJ[0]=true => K[4]
+        // K[0]aJ[0]=false => J[4]
+        //
+        var k:number = this._listOfShips.length-1;
+        var n:number = otherArmada._listOfShips.length-1;
+        while (k >= 1 || n >= 1){
+            if (this._listOfShips[k].battle(otherArmada._listOfShips[n]) == true){
+                otherArmada._listOfShips.splice(n,1);
+            } else if (this._listOfShips[k].battle(otherArmada._listOfShips[n]) == false){
+                this._listOfShips.splice(k,1);
+            }
+            k--;
+            n--;
+            console.log(this._listOfShips.length);
+            console.log(otherArmada._listOfShips.length);
+            
+        }   
         // for (let k=0; k<=this._listOfShips.length-1; k++){
         //     //if k=0 score > score2 => k=0 battle otherArmada._listOfShips[k+1]
         //     if (this._listOfShips[k].battle(otherArmada._listOfShips[k]) == true){
-        //         console.log(this._listOfShips[k].battle(otherArmada._listOfShips[k+1]));
+        //         otherArmada._listOfShips.splice(k,1);
+        //         console.log("Ships in defender Armada: " + otherArmada._listOfShips.length);
+                
+        //         //console.log(this._listOfShips[k].battle(otherArmada._listOfShips[k+1]));
+        //         //console.log("Ships remaining:" + this._listOfShips.length);
+                
         //     }
-        //     else
+        //     else if (this._listOfShips[k].battle(otherArmada._listOfShips[k+1]) == false)
         //     {
-        //         console.log(this._listOfShips[k+1].battle(otherArmada._listOfShips[k]));
+        //         this._listOfShips.splice(k,1);
+        //         console.log("Ships in opponent Armada: " + this._listOfShips.length);
+                
+        //         //console.log(otherArmada._listOfShips[k+1].battle(this._listOfShips[k+1]));
+        //         //console.log("Ships remaining:" + otherArmada._listOfShips.length);
+                
         //     }
-        // }
+        //}
+        if (this._listOfShips.length == 1){
+            console.log(this._listOfShips + " is the winner Armada.");
+        }
+        else if (otherArmada._listOfShips.length == 1){
+            console.log(otherArmada._listOfShips + " is the winner Armada.");
+            
+        }
+        
        // console.log(this._listOfShips);  
     }
 }
@@ -40,6 +76,6 @@ class Armada {
 let spanish = new Armada();
 let english = new Armada();
 
-spanish.fillArmada(25);
-english.fillArmada(25);
+spanish.fillArmada(5);
+english.fillArmada(5);
 spanish.war(english);
