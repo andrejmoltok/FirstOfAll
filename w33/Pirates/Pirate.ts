@@ -40,16 +40,16 @@ class Pirate {
             //death chance => 1/3 chance
             if (chance == 1){
                 //console.log("Defender: " + chance + "/3");
-                //this.die();
+                this.die();
             }
             else if (chance == 2){
                 //console.log("Offender: " + chance + "/3");
-                //pirate.die();
+                pirate.die();
             }
             else if (chance == 3){
                 //console.log("They both passed out! " + chance + "/3");
-                //this.die();
-                //pirate.die();
+                this.die();
+                pirate.die();
             }
         }
     }
