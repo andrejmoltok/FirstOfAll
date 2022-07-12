@@ -1,29 +1,26 @@
 'use strict'
 
-function strings1(str:string):any{
+function string_change(str:string):any{
     try {
-        let newStr = new Array();
-        let split = str.split('');
-        let i:number = 0;
-        console.log(split);
-             
-        //cut the first letter every call
-        //and use the remainder in the recursion
-        if (str.length-1 >= i){
-        let extract = split.shift();
-        newStr[i] = "";
-        console.log("Extracted letter: ", extract);
-        if (extract === 'x'){
-            extract = "y";
-        }
-        newStr[i] += extract;
-        console.log("New array: ", newStr);
-        i++;
-        }
+        let newStr:string = "";
         
-        if (split.join('').length > 0){
-            strings1(split.join(''));
-        }        
+        console.log("Check first letter: ", str.substring(0,1));
+        newStr += str.substring(0,1);
+        if (str.substring(0,1) == 'x'){
+            console.log(str.replace(str[0],'y'));
+            console.log(str);
+            
+        }
+
+        console.log("New string: ",newStr);
+        console.log("Check after replace: ",str);
+        
+        
+
+        //string_change(str.substring(1));//takes the string beginning from index 1
+
+
+        return null;
     }
     catch (error)
     {
@@ -31,5 +28,5 @@ function strings1(str:string):any{
     }
 }
 
-console.log(strings1('Xerox'));
-//console.log(strings1('Xerxes'));
+console.log(string_change('Xerox'));
+//console.log(string_change('Xerxes'));
