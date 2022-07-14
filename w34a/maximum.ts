@@ -1,15 +1,23 @@
 //find the largest number in the array recursively
 
-var arr:number[] = [5,10,22,56,44,9,11,77,34];
+var arr:number[] = [5,10,44,77,41,56,99,17];
 var n:number = arr.length;
 
-function maxVal(arr:any[]):any{
-    if (n == 1){
+function maxVal(arr:Array<number>):any{
+    // if (arr.length > 0){    
+    //     maxVal(arr);
+    // }
+    var max:number = 0;
+    if (arr.length == 1){
         return arr[0];
     }
-    else
-    {
-        return Math.max(arr[n-1], maxVal(arr[n-1]));
+    else if (arr.length > 1){
+        (arr[0] > arr[1]) ? max = arr[0] : max = arr[1];
+        arr.shift();
+        console.log(arr);
+        
+        maxVal(arr);
+        return max
     }
 }
 
