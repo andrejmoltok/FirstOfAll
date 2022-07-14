@@ -4,7 +4,8 @@
 
 function euclidGCD(big:number,small:number):any{
     if (big < 0 || small < 0){
-        console.log("Please use positive numbers.");
+        console.log("Negative numbers converted to positive and called the function. ");
+        return euclidGCD(Math.abs(big),Math.abs(small));
     }
     else if (big == small){
         return big;
