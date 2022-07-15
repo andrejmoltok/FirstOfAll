@@ -8,6 +8,4 @@ class Tree extends Plants{
 
 }
 
-// let orange = new Tree('orange');
-
 export {Tree}

@@ -8,8 +8,4 @@ class Flower extends Plants{
 
 }
 
-
-// let blue = new Flower('blue');
-// console.log(blue.getWaterAmount());
-
 export {Flower}

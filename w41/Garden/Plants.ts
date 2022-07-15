@@ -3,7 +3,7 @@ import {Flower} from "./Flower";
 
 class Plants {
 
-    protected _waterAmount:number;
+    public _waterAmount:number;
     protected _color:string;
     protected _type:string;
 
@@ -36,12 +36,16 @@ class Plants {
         }
     }
 
-    public getWaterAmount():number{
+    public getWaterAmount(): number {
         return this._waterAmount;
     }
 
-    public getType():string{
+    public getType(): string {
         return this._type;
+    }
+
+    public setWaterAmount(amount:number):any{
+        this._waterAmount = amount;
     }
 }
 
