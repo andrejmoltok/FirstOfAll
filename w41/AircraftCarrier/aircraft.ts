@@ -16,8 +16,25 @@ class Aircraft {
         this._isPriority = isPriority;
     }
 
+    public shoot(aircraft:Aircraft):any{
+        if (this._maxAmmo>= 0 && aircraft._maxAmmo >= 0){
+            this.setAmmo(this._maxAmmo--);
+            aircraft.setAmmo(aircraft._maxAmmo--);
+            this.shoot(aircraft);
+        }
+    }
+
+    
     public fight(aircraft:Aircraft):any{
-        for (let i=0; i<=){}
+        let chance:number = (Math.floor(Math.random() * 2)+1);
+            if (chance === 1) {
+                this.shoot(aircraft);
+                console.log(this._type + " made a damage of " + (this._maxAmmo * this._baseDamage) + " and won!");
+            }
+            else if (chance === 2) {
+                aircraft.shoot(this);
+                console.log(aircraft._type + " made a damage of " + (aircraft._maxAmmo * aircraft._baseDamage) + " and won!");
+            }
     }
 
     public getStatus(): any {
@@ -35,12 +52,12 @@ class Aircraft {
 
     public refillAmmo(amount:number): number{
         var remainder:number = 0;
-        if (this._type === 'F16'){
+        if (this.isPriority() === true){
             if (amount > this._maxAmmo)
             this.setAmmo(this._maxAmmo);
             remainder = amount - this._maxAmmo;
         }
-        else if (this._type === 'F35'){
+        else {
             if (amount > this._maxAmmo)
             this.setAmmo(this._maxAmmo);
             remainder = amount - this._maxAmmo;
