@@ -8,12 +8,14 @@ class Aircraft {
     protected _maxAmmo:number;
     protected _baseDamage:number;
     protected _isPriority:boolean;
+    private _total:number;
     
     constructor(type:string,maxAmmo:number,baseDamage:number,isPriority:boolean){
         this._type = type;
         this._maxAmmo = maxAmmo;
         this._baseDamage = baseDamage;
         this._isPriority = isPriority;
+        this._total = this._maxAmmo * this._baseDamage;
     }
 
     public shoot(aircraft:Aircraft):any{
@@ -24,17 +26,12 @@ class Aircraft {
         }
     }
 
-    
     public fight(aircraft:Aircraft):any{
-        let chance:number = (Math.floor(Math.random() * 2)+1);
-            if (chance === 1) {
-                this.shoot(aircraft);
-                console.log(this._type + " made a damage of " + (this._maxAmmo * this._baseDamage) + " and won!");
-            }
-            else if (chance === 2) {
-                aircraft.shoot(this);
-                console.log(aircraft._type + " made a damage of " + (aircraft._maxAmmo * aircraft._baseDamage) + " and won!");
-            }
+        this.shoot(aircraft);
+        (this._total > aircraft._total) ? 
+        console.log(this._type + " made a damage of " + this._total + " and won!") :
+        console.log(aircraft._type + " made a damage of " + aircraft._total + " and won!");
+            
     }
 
     public getStatus(): any {
@@ -50,7 +47,7 @@ class Aircraft {
         return this._isPriority;
     }
 
-    public refillAmmo(amount:number): number{
+    public refillAmmo(amount:number): number {
         var remainder:number = 0;
         if (this.isPriority() === true){
             if (amount > this._maxAmmo)
