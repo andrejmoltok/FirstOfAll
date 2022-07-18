@@ -18,12 +18,12 @@ class Aircraft {
         this._totalDmg = this._maxAmmo * this._baseDamage;
     }
 
-    public fight(aircraft:Aircraft):any{
+    public fight():any{
         this._maxAmmo = 0;
-        aircraft._maxAmmo = 0;
-        (this._totalDmg > aircraft._totalDmg) ? 
-        console.log(this._type + " made a damage of " + this._totalDmg + " and won!") :
-        console.log(aircraft._type + " made a damage of " + aircraft._totalDmg + " and won!"); 
+        //(this._totalDmg > aircraft._totalDmg) ? 
+        //    console.log(this._type + " made a damage of " + this._totalDmg + " and won!") :
+        //        console.log(aircraft._type + " made a damage of " + aircraft._totalDmg + " and won!");
+        return this._totalDmg;
     }
 
     public getStatus(): any {
@@ -70,6 +70,7 @@ class Aircraft {
     public getTotalDmg():any{
         return this._totalDmg;
     }
+
 }
 
 

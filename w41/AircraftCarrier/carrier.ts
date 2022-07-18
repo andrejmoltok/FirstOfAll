@@ -17,17 +17,16 @@ class Carrier {
         this._ammoStorage = this._initAmmo;
     }
 
-    public add(aircraft:Aircraft) :any {
+    public add(aircraft:Aircraft) :void {
         this._aircrafts.push(aircraft);
     }
 
-    public fill() :any {
+    public fill(): void {
         //returns maximum ammunition needed by all aircrafts inside the carrier
         let maxAmmunition:number = 0;
         for (let i=0; i<=this._aircrafts.length-1; i++){
             this._aircrafts[i].refillAmmo(maxAmmunition);
             maxAmmunition += Array.from(this._aircrafts)[i].getMaxAmmo();
-            
         }
 
         if (this._ammoStorage === 0) {
@@ -43,20 +42,45 @@ class Carrier {
         return this._ammoStorage = this._ammoStorage - amount;
     }
 
-    public war(carrier: Carrier):any{
-        this._aircrafts.forEach((elem) => elem.fight(elem));
-        if (this._aircrafts) {
-            let maxDmg:number = 0;
-            for (let j=0; j<=this._aircrafts.length-1; j++){
-                maxDmg += this._aircrafts[j].getTotalDmg();
-            }
-            carrier._HP - maxDmg;
+    public fight(enemyCarrier: Carrier):void{
+        let maxDmg:number = 0;
+        for (let j=0; j<=this._aircrafts.length-1; j++){
+            maxDmg += this._aircrafts[j].getTotalDmg();
+            this._aircrafts[j].fight();
+        }
+        enemyCarrier._HP = enemyCarrier._HP - maxDmg;
+        if (maxDmg > enemyCarrier._HP){
+            enemyCarrier.setHP();
+            console.log("It's dead Jim! :(");
+        }
+        else if (enemyCarrier._HP === 0)
+        {
+            console.log("It's dead Jim! :(");
+        }
+    }
+
+    public setHP():void{
+        this._HP = 0;
+    }
+
+    public getStatus():void{
+        let maxDmg:number = 0;
+
+        for (let k=0; k<=this._aircrafts.length-1; k++){
+            maxDmg += this._aircrafts[k].getTotalDmg();
+        }
+
+        console.log("HP: " + this._HP + ", Aircraft count: " + this._aircrafts.length + ", Ammo Storage: " 
+        + this._ammoStorage + ", Total damage: " + (maxDmg));
+        
+        for (let m=0; m<=this._aircrafts.length-1; m++) {
+            this._aircrafts[m].getStatus();
         }
     }
 }
 
-let nimitz = new Carrier(100,300);
-let gordon = new Carrier(100,500);
+let nimitz = new Carrier(100,1000);
+let gordon = new Carrier(100,800);
 
 let enola = new F35();
 let carl = new F16();
@@ -75,8 +99,8 @@ gordon.add(darl);
 // console.log(nimitz);
 // console.log(gordon);
 
-console.log(nimitz.war(gordon));
-console.log(gordon.war(nimitz));
+console.log(nimitz.fight(gordon));
+//console.log(gordon.fight(nimitz));
 
-console.log(nimitz);
-console.log(gordon);
+nimitz.getStatus();
+gordon.getStatus();
