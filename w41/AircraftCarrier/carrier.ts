@@ -22,24 +22,26 @@ class Carrier {
     }
 
     public fill() :any {
-        //this._aircrafts[0].getMaxAmmo();
-        //add up the sum of all aircraft ammo in the aircrafts array
-
+        //returns maximum ammunition needed by all aircrafts inside the carrier
         let maxAmmunition:number = 0;
         for (let i=0; i<=this._aircrafts.length-1; i++){
             maxAmmunition += Array.from(this._aircrafts)[i].getMaxAmmo();
         }
         
-        //console.log(maxAmmunition);
-        
         if (this._ammoStorage === 0) {
             console.log("The ammunition storage is empty, can't refill aircrafts!");
         }
-        // else if (this._ammoStorage === maxAmmunition) {
-        //     console.log(Array.from(this._aircrafts).forEach((item) => item.refillAmmo(this._ammoStorage)));
-        // }
+        else if (this._ammoStorage === maxAmmunition){
+            for (let k=0; k<=this._aircrafts.length-1; k++){
+                console.log(this._aircrafts[k].refillAmmo(maxAmmunition));
+            }
+            this._ammoStorage = this._ammoStorage - maxAmmunition;
+        }
         else {
-            console.log(Array.from(this._aircrafts).forEach((item) => item.refillAmmo(this._ammoStorage)));
+            for (let k=0; k<=this._aircrafts.length-1; k++){
+                console.log(this._aircrafts[k].refillAmmo(this._ammoStorage));
+            }
+            this._ammoStorage = this._ammoStorage - maxAmmunition;
         }
      
     }
