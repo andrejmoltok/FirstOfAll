@@ -8,6 +8,8 @@ class F16 extends Aircraft {
     }
 
 }
+
+
 // let f16 = new F16();
 // let f35 = new F35();
 // f16.getStatus();
@@ -24,7 +26,7 @@ class F16 extends Aircraft {
 // f16.getStatus();
 // f35.getStatus();
 
-//console.log(f16.isPriority());
+// console.log(f16.isPriority());
 
 
 export {F16}

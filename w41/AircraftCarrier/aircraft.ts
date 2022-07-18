@@ -66,6 +66,10 @@ class Aircraft {
     public getMaxAmmo():number{
         return this._maxAmmo;
     }
+
+    public getTotalDmg():any{
+        return this._totalDmg;
+    }
 }
 
 
