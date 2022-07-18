@@ -14,7 +14,7 @@ class Carrier {
         this._aircrafts = [];
         this._initAmmo = initAmmo;
         this._HP = HP;
-        this._ammoStorage = 20;
+        this._ammoStorage = 2300;
     }
 
     public add(aircraft:Aircraft) :any {
@@ -33,7 +33,7 @@ class Carrier {
         //console.log(maxAmmunition);
         
         if (this._ammoStorage === 0) {
-            throw new Error("The ammunition storage is empty, can't refill aircrafts!");
+            console.log("The ammunition storage is empty, can't refill aircrafts!");
         }
         // else if (this._ammoStorage === maxAmmunition) {
         //     console.log(Array.from(this._aircrafts).forEach((item) => item.refillAmmo(this._ammoStorage)));
