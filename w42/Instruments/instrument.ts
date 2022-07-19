@@ -6,6 +6,6 @@ export abstract class Instrument {
         this._name = name;
     }
 
-    public abstract play():string;
+    public abstract play():void;
 
 }

@@ -15,7 +15,7 @@ export abstract class StringedInstrument extends Instrument {
         return this.effect;
     }
 
-    public play():any{
-        return console.log(`${this._name}, a ${this.numberOfStrings}-stringed instrument that goes ${this.sound()}`);
+    public play():void{
+        console.log(`${this._name}, a ${this.numberOfStrings}-stringed instrument that goes ${this.sound()}`);
     }
 }
