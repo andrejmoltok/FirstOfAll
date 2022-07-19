@@ -1,11 +1,11 @@
 export abstract class Animal {
 
-    _name?:string;
-    _age?:number;
+    protected _name:string;
+    protected _age:number;
 
-    constructor(name?:string,age?:number){
+    constructor(name:string,age?:number){
         this._name = name;
-        this._age = age;
+        this._age?? 0;
     }
 
     public abstract getName():string;
