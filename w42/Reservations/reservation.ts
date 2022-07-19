@@ -1,9 +1,6 @@
-interface Reservation {
-    getDowBooking(): string;
-    getCodeBooking(): string;
-}
+import { Reservation } from "./Reservation_interface";
 
-class Reservation {
+class Reservate implements Reservation{
 
     protected _DOW:string[];
     protected _code:string;
@@ -29,7 +26,7 @@ class Reservation {
     }
 }
 
-let rev = new Reservation();
+let rev = new Reservate();
 
 console.log("Booking# " + rev.getCodeBooking() + " for " + rev.getDowBooking());
 console.log("Booking# " + rev.getCodeBooking() + " for " + rev.getDowBooking());
