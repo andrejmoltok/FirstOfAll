@@ -5,11 +5,11 @@ export class Mud extends Block {
     super(
       quality ?? 0,
       producer ?? "",
-      "Mud",
+      "mud",
       "dark gray",
       0,
       false,
-      ["Brick", "Air", "Lava", "Door", "Window", "Gold"],
+      ["brick", "air", "lava", "door", "window", "gold"],
       []
     );
   }
@@ -20,12 +20,12 @@ export class Glowstone extends Block {
     super(
       quality ?? 0,
       producer ?? "",
-      "Glowstone",
+      "glowstone",
       "white",
       300,
       false,
-      ["Glass", "Ice", "Air", "Lava"],
-      [["Glass"],["Gold"]]
+      ["glass", "ice", "air", "lava"],
+      [["glass"],["gold"]]
     );
   }
 }
@@ -40,11 +40,11 @@ export class Glass extends Block {
     super(
       quality ?? 0,
       producer ?? "",
-      "Glass",
+      "glass",
       color ?? "transparent",
       lightTransmission ?? 99,
       false,
-      ["Mud", "Brick", "Ice", "Air", "Glowstone", "Door"],
+      ["mud", "brick", "ice", "air", "glowstone", "door"],
       []
     );
   }
@@ -55,14 +55,14 @@ export class Lava extends Block {
     super(
       quality ?? 0,
       producer ?? "",
-      "Lava",
+      "lava",
       "yellow",
       170,
       false,
-      ["Mud", "Brick", "Glass", "Ice", "Air", "Glowstone"],
+      ["mud", "brick", "glass", "ice", "air", "glowstone"],
       [
-        ["Mud", "Brick"],
-        ["Ice", "Air"],
+        ["mud", "brick"],
+        ["ice", "air"],
       ]
     );
   }
@@ -73,11 +73,11 @@ export class Air extends Block {
     super(
       quality ?? 0,
       producer ?? "",
-      "Air",
+      "air",
       "transparent",
       100,
       true,
-      ["Mud", "Brick", "Glass", "Door", "Windows", "Gold"],
+      ["mud", "brick", "glass", "door", "window", "gold"],
       []
     );
   }
@@ -94,7 +94,7 @@ export class Window extends Block {
     super(
       quality,
       producer,
-      "Window",
+      "window",
       color,
       lightTransmission,
       crossable,
@@ -109,7 +109,7 @@ export class Gold extends Block {
     super(
       quality ?? 0,
       producer ?? "",
-      "Gold",
+      "gold",
       "rgb: 255,215,0",
       lightTransmission ?? 0,
       false,
@@ -124,7 +124,7 @@ export class Ice extends Block {
     super(
       quality ?? 0,
       producer ?? "",
-      "Ice",
+      "ice",
       "transparent",
       97,
       false,
@@ -144,7 +144,7 @@ export class Door extends Block {
     super(
       quality ?? 0,
       producer ?? "",
-      "Door",
+      "door",
       color ?? "",
       lightTransmission ?? 0,
       true,
@@ -159,7 +159,7 @@ export class Brick extends Block {
     super(
       quality ?? 0,
       producer ?? "",
-      "Brick",
+      "brick",
       color ?? "rgb: 144,76,42",
       0,
       false,

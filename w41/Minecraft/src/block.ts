@@ -39,16 +39,6 @@ export class Block {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public canPlaceAfter(block: Block): void {
-    const mud = ["brick", "air", "lava", "door", "window", "gold"];
-    const glowstone = ["glass", "ice", "air", "lava"];
-    const glass = ["mud", "brick", "ice", "air", "glowstone", "door"];
-    const lava = ["mud", "brick", "glass", "ice", "air", "glowstone"];
-    const air = ["mud", "brick", "glass", "door", "window", "gold"];
-    const window = ["mud", "brick", "air", "door", "glowstone"];
-    const gold = ["glowstone", "glass"];
-    const ice = ["mud", "brick", "glass", "lava", "air", "glowstone"];
-    const door = ["mud", "brick", "air", "window"];
-    const brick = ["mud", "glass", "air", "door", "window"];
     console.log(`Can i place ${this._type} after ${block._type}?`);
     
     for (let i = 0; i < block._placeable.length; i += 1) {
