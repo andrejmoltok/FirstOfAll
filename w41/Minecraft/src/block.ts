@@ -16,7 +16,7 @@ export class Block {
   protected _lightTransmission: number;
   protected _crossable: boolean;
   protected _placeable: string[];
-  protected _canTransform?: string[][];
+  protected _canTransform: string[][];
   protected _quality?: number;
   protected _producer?: string;
 
@@ -28,7 +28,7 @@ export class Block {
     placeable: string[],
     canTransform: string[][],
     quality?: number,
-    producer?: string,
+    producer?: string
   ) {
     this._type = type;
     this._color = color;
@@ -41,7 +41,11 @@ export class Block {
   }
 
   public getStatus(): void {
-    console.log(`Block of type: ${this._type} \nHas light transmission: ${this._lightTransmission} \nCan` + (this._crossable? " " : " not ") + `be crossed.`);
+    console.log(
+      `Block of type: ${this._type} \nHas light transmission: ${this._lightTransmission} \nCan` +
+        (this._crossable ? " " : " not ") +
+        `be crossed.`
+    );
   }
 
   public getTransmission(): number {
@@ -49,9 +53,13 @@ export class Block {
   }
 
   public canPlaceAfter(block: Block): boolean {
-    if (block._placeable.includes(this._type)){
+    if (block._placeable.includes(this._type)) {
       return true;
     }
     return false;
+  }
+
+  public getTransform(): string[][] {
+    return this._canTransform;
   }
 }

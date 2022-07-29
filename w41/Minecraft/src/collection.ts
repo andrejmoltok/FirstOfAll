@@ -21,16 +21,13 @@ export class Glowstone extends Block {
       300,
       false,
       ["glass", "ice", "air", "lava"],
-      [["glass"],["gold"]]
+      [["glass"], ["gold"]]
     );
   }
 }
 
 export class Glass extends Block {
-  constructor(
-    lightTransmission?: number,
-    color?: string
-  ) {
+  constructor(lightTransmission?: number, color?: string) {
     super(
       "glass",
       color ?? "transparent",
