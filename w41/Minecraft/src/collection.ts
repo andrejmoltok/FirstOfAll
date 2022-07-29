@@ -176,5 +176,5 @@ mud.getStatus();
 glow.getStatus();
 console.log(mud.getTransmission());
 console.log(mud);
-mud.canPlaceAfter(glow);
-mud.canPlaceAfter(brick);
+console.log(mud.canPlaceAfter(glow));
+console.log(mud.canPlaceAfter(brick));
