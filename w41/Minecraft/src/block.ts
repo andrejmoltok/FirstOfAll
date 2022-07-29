@@ -39,11 +39,6 @@ export class Block {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public canPlaceAfter(block: Block): boolean {
-    // for (let i = 0; i < block._placeable.length; i += 1) {
-    //   if (this._type == block._placeable[i]) {
-    //     return true;
-    //   }
-    // }
     if (block._placeable.includes(this._type)){
       return true;
     }
