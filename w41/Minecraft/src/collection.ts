@@ -1,10 +1,8 @@
 import { Block } from "./block";
 
 export class Mud extends Block {
-  constructor(quality?: number, producer?: string) {
+  constructor() {
     super(
-      quality ?? 0,
-      producer ?? "",
       "mud",
       "dark gray",
       0,
@@ -16,10 +14,8 @@ export class Mud extends Block {
 }
 
 export class Glowstone extends Block {
-  constructor(quality?: number, producer?: string) {
+  constructor() {
     super(
-      quality ?? 0,
-      producer ?? "",
       "glowstone",
       "white",
       300,
@@ -32,14 +28,10 @@ export class Glowstone extends Block {
 
 export class Glass extends Block {
   constructor(
-    quality?: number,
-    producer?: string,
-    color?: string,
-    lightTransmission?: number
+    lightTransmission?: number,
+    color?: string
   ) {
     super(
-      quality ?? 0,
-      producer ?? "",
       "glass",
       color ?? "transparent",
       lightTransmission ?? 99,
@@ -51,10 +43,8 @@ export class Glass extends Block {
 }
 
 export class Lava extends Block {
-  constructor(quality?: number, producer?: string) {
+  constructor() {
     super(
-      quality ?? 0,
-      producer ?? "",
       "lava",
       "yellow",
       170,
@@ -69,10 +59,8 @@ export class Lava extends Block {
 }
 
 export class Air extends Block {
-  constructor(quality?: number, producer?: string) {
+  constructor() {
     super(
-      quality ?? 0,
-      producer ?? "",
       "air",
       "transparent",
       100,
@@ -92,23 +80,21 @@ export class Window extends Block {
     crossable: boolean
   ) {
     super(
-      quality,
-      producer,
       "window",
       color,
       lightTransmission,
       crossable,
       ["mud", "brick", "air", "door", "glowstone"],
-      []
+      [],
+      quality,
+      producer
     );
   }
 }
 
 export class Gold extends Block {
-  constructor(quality?: number, producer?: string, lightTransmission?: number) {
+  constructor(lightTransmission?: number) {
     super(
-      quality ?? 0,
-      producer ?? "",
       "gold",
       "rgb: 255,215,0",
       lightTransmission ?? 0,
@@ -120,10 +106,8 @@ export class Gold extends Block {
 }
 
 export class Ice extends Block {
-  constructor(quality?: number, producer?: string) {
+  constructor() {
     super(
-      quality ?? 0,
-      producer ?? "",
       "ice",
       "transparent",
       97,
@@ -142,23 +126,21 @@ export class Door extends Block {
     lightTransmission?: number
   ) {
     super(
-      quality ?? 0,
-      producer ?? "",
       "door",
       color ?? "",
       lightTransmission ?? 0,
       true,
       ["mud", "brick", "air", "window"],
-      []
+      [],
+      quality ?? 0,
+      producer ?? ""
     );
   }
 }
 
 export class Brick extends Block {
-  constructor(quality?: number, producer?: string, color?: string) {
+  constructor(color?: string) {
     super(
-      quality ?? 0,
-      producer ?? "",
       "brick",
       color ?? "rgb: 144,76,42",
       0,
@@ -168,13 +150,3 @@ export class Brick extends Block {
     );
   }
 }
-
-const mud = new Mud();
-const glow = new Glowstone();
-const brick = new Brick();
-mud.getStatus();
-glow.getStatus();
-console.log(mud.getTransmission());
-console.log(mud);
-console.log(mud.canPlaceAfter(glow));
-console.log(mud.canPlaceAfter(brick));

@@ -1,32 +1,43 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { Mud } from "./collection";
+import { Glowstone } from "./collection";
+import { Glass } from "./collection";
+import { Lava } from "./collection";
+import { Air } from "./collection";
+import { Window } from "./collection";
+import { Gold } from "./collection";
+import { Ice } from "./collection";
+import { Door } from "./collection";
+import { Brick } from "./collection";
+
 export class Block {
-  protected _quality: number;
-  protected _producer: string;
   protected _type: string;
   protected _color: string;
   protected _lightTransmission: number;
   protected _crossable: boolean;
   protected _placeable: string[];
-  protected _canTransform: string[][];
+  protected _canTransform?: string[][];
+  protected _quality?: number;
+  protected _producer?: string;
 
   constructor(
-    quality: number,
-    producer: string,
     type: string,
     color: string,
     lightTransmission: number,
     crossable: boolean,
     placeable: string[],
-    canTransform: string[][]
+    canTransform: string[][],
+    quality?: number,
+    producer?: string,
   ) {
-    this._quality = quality;
-    this._producer = producer;
     this._type = type;
     this._color = color;
     this._lightTransmission = lightTransmission;
     this._crossable = crossable;
     this._placeable = placeable;
     this._canTransform = canTransform;
+    this._quality = quality;
+    this._producer = producer;
   }
 
   public getStatus(): void {
