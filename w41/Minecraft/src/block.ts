@@ -37,7 +37,6 @@ export class Block {
     return this._lightTransmission;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public canPlaceAfter(block: Block): boolean {
     if (block._placeable.includes(this._type)){
       return true;
