@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+}
+
+#wrapper{
+    margin: 0 0;
+    padding: 0 0;
+    border: 0 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+section, aside{
+    height: 150vh;
+}
+
+section{
+    background-color: yellow;
+    width: 70%;
+}
+
+aside{
+    background-color: green;
+    width: 30%;
+}
+
+ul{
+    background-color: purple;
+    margin: 0 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+li{
+    list-style: none;
+    margin: 0 20px 0 0;
+    padding-left: 0;
+    background-color: cyan;
+    height: 50px;
+}
+
+.one{
+    flex-basis: 180px;
+}
+
+.two{
+    flex-basis: 130px;
+}
+
+.three{
+    flex-basis: 150px;
+}
