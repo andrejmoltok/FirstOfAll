@@ -14,7 +14,7 @@
 
 .yellow{
     background-color: yellow;
-    flex: 1 0 133px;
+    flex-basis: 140px;
     order: 1;
 }
 
