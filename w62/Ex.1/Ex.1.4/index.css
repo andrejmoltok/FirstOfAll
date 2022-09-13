@@ -1,0 +1,23 @@
+.container{
+    width: 300px;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.item{
+    height: 70px;
+}
+
+.green{
+    background-color: green;
+}
+
+.yellow{
+    background-color: yellow;
+    flex: 1 0 133px;
+    order: 1;
+}
+
+.purple{
+    background-color: purple;
+}
