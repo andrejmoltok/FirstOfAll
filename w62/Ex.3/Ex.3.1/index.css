@@ -1,0 +1,22 @@
+ul{
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container{
+    margin: auto auto;
+    width: 750px;
+    height: 280px;
+    background-color: yellow;
+}
+
+.item{
+    background-color: purple;
+    margin: 0px 5px 0px 0px;
+    flex-basis: 100px;
+    height: 100px;
+}

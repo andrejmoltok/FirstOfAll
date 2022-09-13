@@ -1,0 +1,19 @@
+.yellow{
+    background-color: yellow;
+    max-width: 750px;
+    flex: 7 0 107px;
+    height: 280px;
+    margin: auto auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.purple{
+    background-color: purple;
+    width: 107px;
+    height: 107px;
+    position: absolute;
+    align-self: center;
+    z-index: 2;
+}
