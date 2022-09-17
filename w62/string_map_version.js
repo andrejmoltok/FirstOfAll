@@ -10,11 +10,8 @@ function strReader(str) {
         }
         arr.push(count);
     }
-
     let idx = arr.findIndex((v) => v == Math.max(...arr));
-
     myMap.set(str[idx],arr[idx]);
-
     return myMap;
 }
 
