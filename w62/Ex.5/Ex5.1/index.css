@@ -1,0 +1,47 @@
+#wrapper {
+    margin: auto auto;
+    width: 100%;
+}
+
+.top {
+    background-color: cyan;
+    height: 100px;
+}
+
+#mid {
+    display: grid;
+    grid-template-columns: 400px 2fr 400px;
+    gap: 20px;
+    height: 900px;
+    position: relative;
+    top: 0px;
+}
+
+#left {
+    background-color: orange;
+}
+
+#middle {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#smaller {
+    background-color: black;
+    width: 80px;
+    height: 80px;
+    margin: 30px;
+}
+
+#right {
+    background-color: purple;
+
+}
+
+#footer {
+    background-color: blue;
+    height: 100px;
+}
