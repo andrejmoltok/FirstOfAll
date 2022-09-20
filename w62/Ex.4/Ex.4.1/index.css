@@ -1,8 +1,57 @@
-#wrapper{
+#wrapper {
     margin: auto auto;
     padding: 0;
     border: 0;
-    background-color: red;
-    width: 500px;
-    height: 500px;
+    width: 1250px;
+    height: 650px;
+    clear: both;
+    position: relative;
+    top: 60px;
+}
+
+section {
+    background-color: green;
+    width: 470px;
+    height: 550px;
+    float: left;
+    margin-right: 10px;
+}
+
+aside {
+    background-color: yellow;
+    width: 770px;
+    height: 550px;
+    float: left;
+}
+
+footer {
+    background-color: gray;
+    margin-top: 20px;
+    height: 100px;
+    position: relative;
+    top: 560px;
+}
+
+nav {
+    width: 100%;
+    height: 70px;
+    background-color: purple;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    list-style: none;
+    padding-left: 180px;
+}
+
+li {
+    margin-right: 20px;
+    width: 70px;
+    height: 30px;
+    background-color: cyan;
 }
