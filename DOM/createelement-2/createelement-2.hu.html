@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: CreateElement</title>
+</head>
+
+<body>
+  <ul class="asteroids">
+    <li>The King</li>
+  </ul>
+
+  <!--
+      Dolgozhatsz a html script tag-en belül, vagy külön js fájlban is,
+      utóbbi esetén ne felejtsd el beimportálni a js fájlt az alábbi módon:
+      <script src="createelement-2.js"></script>
+
+      Távolítsd el a 'The King' elemet a listából.
+
+      Töltsd fel a listát az alábbi lista elemeivel (csak az aszteroidákat add
+      hozzá).
+
+      Minden listaelem kategóriája legyen az adott objektum "category"
+      tulajdonsága, a "content" tulajdonság pedig a tartalma.
+    -->
+
+  <script>
+    const planetData = [
+      {
+        category: 'inhabited',
+        content: 'Foxes',
+        asteroid: true,
+      },
+      {
+        category: 'inhabited',
+        content: 'Whales and Rabbits',
+        asteroid: true,
+      },
+      {
+        category: 'uninhabited',
+        content: 'Baobabs and Roses',
+        asteroid: true,
+      },
+      {
+        category: 'inhabited',
+        content: 'Giant monsters',
+        asteroid: false,
+      },
+      {
+        category: 'inhabited',
+        content: 'Sheep',
+        asteroid: true,
+      },
+    ];
+  </script>
+</body>
+
+</html>
