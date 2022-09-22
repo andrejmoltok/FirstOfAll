@@ -1,7 +1,11 @@
 var allPara = Array.from(document.getElementsByTagName('p'));
 console.log(allPara[3].hasAttribute("dolphin"));
 if (allPara[3].hasAttribute("dolphin")) {
-    document.getElementsByClassName('apple')[0].textContent = "pear";
+    for (let i = 0; i < allPara.length; i++) {
+        if (allPara[i].className == "apple") {
+            allPara[i].textContent = "pear";
+        }
+    }
 }
 console.log(allPara[0].className == "apple");
 if (allPara[0].classname == "apple") {
