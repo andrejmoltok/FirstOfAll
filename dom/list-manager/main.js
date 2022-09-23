@@ -267,7 +267,7 @@ var tomatoRight = document.getElementById('tomatoRight');
 breadLeft.addEventListener('click', breadLeftClick);
 milkLeft.addEventListener('click', milkLeftClick);
 orangeLeft.addEventListener('click', orangeLeftClick);
-tomatoLeft.addEventListener('click', tomatoClick);
+tomatoLeft.addEventListener('click', tomatoLeftClick);
 
 breadRight.addEventListener('click', breadRightClick);
 milkRight.addEventListener('click', milkRightClick);
