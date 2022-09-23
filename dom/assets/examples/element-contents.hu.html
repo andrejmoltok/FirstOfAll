@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>DOM: Elem Tartalma</title>
+</head>
+
+<body>
+  <p class="container">Ez volt az <strong>eredeti tartalom</strong>.</p>
+  <script>
+    'use strict';
+
+    const container = document.querySelector('.container');
+    console.log('innerHTML:', container.innerHTML);
+    console.log('textContent:', container.textContent);
+    container.innerHTML = 'Ez most <strong>az új tartalom!</strong>';
+  </script>
+</body>
+
+</html>
