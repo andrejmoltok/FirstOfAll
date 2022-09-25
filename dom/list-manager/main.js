@@ -62,6 +62,23 @@ items.forEach((elem) => {
     leftBox.appendChild(lBdiv);
 });
 
+//id selector section
+var breadLeft = document.getElementById('breadLeft');
+var milkLeft = document.getElementById('milkLeft');
+var orangeLeft = document.getElementById('orangeLeft');
+var tomatoLeft = document.getElementById('tomatoLeft');
+
+var breadRight = document.getElementById('breadRight');
+var milkRight = document.getElementById('milkRight');
+var orangeRight = document.getElementById('orangeRight');
+var tomatoRight = document.getElementById('tomatoRight');
+
+//eventlisteners
+breadLeft.addEventListener('click', breadLeftClick);
+milkLeft.addEventListener('click', milkLeftClick);
+orangeLeft.addEventListener('click', orangeLeftClick);
+tomatoLeft.addEventListener('click', tomatoLeftClick);
+
 
 //functions used in eventlisteners
 function breadLeftClick() {
@@ -166,6 +183,7 @@ buttonAdd.addEventListener('click',() => {
         breadDiv.style.width = "127px";
         breadDiv.style.height = "31.5px";
         rightBox.appendChild(breadDiv);
+        breadRight.addEventListener('click', breadRightClick);
         isClicked = "";
         console.log("bread added to rightBox");
     } else if (isClicked === "milk") {
@@ -188,6 +206,7 @@ buttonAdd.addEventListener('click',() => {
         orangeDiv.style.width = "127px";
         orangeDiv.style.height = "31.5px";
         rightBox.appendChild(orangeDiv);
+        orangeRight.addEventListener('click', orangeRightClick);
         isClicked = "";
         console.log("orange added to rightBox");
     } else if (isClicked === "tomato") {
@@ -199,6 +218,7 @@ buttonAdd.addEventListener('click',() => {
         tomatoDiv.style.width = "127px";
         tomatoDiv.style.height = "31.5px";
         rightBox.appendChild(tomatoDiv);
+        tomatoRight.addEventListener('click', tomatoRightClick);
         isClicked = "";
         console.log("tomato added to rightBox");
     }
@@ -251,6 +271,7 @@ buttonRemove.addEventListener('click',() => {
         isClicked = "";
         console.log("tomato removed from rightBox");
     }
+<<<<<<< HEAD
 });
 
 var breadLeft = document.getElementById('breadLeft');
@@ -264,3 +285,6 @@ breadLeft.addEventListener('click', breadLeftClick);
 milkLeft.addEventListener('click', milkLeftClick);
 orangeLeft.addEventListener('click', orangeLeftClick);
 tomatoLeft.addEventListener('click', tomatoLeftClick);
+=======
+});
+>>>>>>> 735739868787267aee697df45ef86d1c8f4a5675
