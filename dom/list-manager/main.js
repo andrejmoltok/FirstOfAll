@@ -68,11 +68,6 @@ var milkLeft = document.getElementById('milkLeft');
 var orangeLeft = document.getElementById('orangeLeft');
 var tomatoLeft = document.getElementById('tomatoLeft');
 
-var breadRight = document.getElementById('breadRight');
-var milkRight = document.getElementById('milkRight');
-var orangeRight = document.getElementById('orangeRight');
-var tomatoRight = document.getElementById('tomatoRight');
-
 //eventlisteners
 breadLeft.addEventListener('click', breadLeftClick);
 milkLeft.addEventListener('click', milkLeftClick);
@@ -271,20 +266,4 @@ buttonRemove.addEventListener('click',() => {
         isClicked = "";
         console.log("tomato removed from rightBox");
     }
-<<<<<<< HEAD
 });
-
-var breadLeft = document.getElementById('breadLeft');
-var milkLeft = document.getElementById('milkLeft');
-var orangeLeft = document.getElementById('orangeLeft');
-var tomatoLeft = document.getElementById('tomatoLeft');
-
-
-//eventlisteners
-breadLeft.addEventListener('click', breadLeftClick);
-milkLeft.addEventListener('click', milkLeftClick);
-orangeLeft.addEventListener('click', orangeLeftClick);
-tomatoLeft.addEventListener('click', tomatoLeftClick);
-=======
-});
->>>>>>> 735739868787267aee697df45ef86d1c8f4a5675
