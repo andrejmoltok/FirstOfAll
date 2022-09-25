@@ -258,18 +258,9 @@ var milkLeft = document.getElementById('milkLeft');
 var orangeLeft = document.getElementById('orangeLeft');
 var tomatoLeft = document.getElementById('tomatoLeft');
 
-var breadRight = document.getElementById('breadRight');
-var milkRight = document.getElementById('milkRight');
-var orangeRight = document.getElementById('orangeRight');
-var tomatoRight = document.getElementById('tomatoRight');
 
 //eventlisteners
 breadLeft.addEventListener('click', breadLeftClick);
 milkLeft.addEventListener('click', milkLeftClick);
 orangeLeft.addEventListener('click', orangeLeftClick);
 tomatoLeft.addEventListener('click', tomatoLeftClick);
-
-breadRight.addEventListener('click', breadRightClick);
-milkRight.addEventListener('click', milkRightClick);
-orangeRight.addEventListener('click', orangeRightClick);
-tomatoRight.addEventListener('click', tomatoRightClick);
