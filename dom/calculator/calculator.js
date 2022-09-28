@@ -13,9 +13,7 @@ function clr() {
 }
 
 var tr = Array.from(document.getElementsByTagName('tr'));
-console.log(tr.length);
-tr[0].display = "flex";
-tr[0].style.justifyContent = "flex-end";
+//console.log(tr.length);
 
 var row1 = ['7','8','9','*'];
 var row2 = ['4','5','6','/'];
@@ -57,3 +55,7 @@ for (let m = 0; m < row4.length; m++) {
   tr[4].appendChild(td);
   td.appendChild(button);
 }
+
+var tidees = Array.from(document.getElementsByTagName('input'));
+var selectTDs = tidees.slice(2,tidees.length);
+selectTDs[2].onclick = display(7);
