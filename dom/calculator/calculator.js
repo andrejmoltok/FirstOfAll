@@ -86,13 +86,19 @@ var selectTDs = TDs.slice(6,TDs.length);
 // background colors for td's
 for (let b = 6; b < TDs.length; b+=4) {
   TDs[b].style.backgroundColor = "lightslategrey";
+  TDs[b].style.color = "white";
 }
 
 TDs[0].style.backgroundColor = "lightslategrey";
+TDs[0].style.color = "white";
 TDs[2].style.backgroundColor = "lightslategrey";
-TDs[3].style.backgroundColor = "lightslategrey"; 
-TDs[4].style.backgroundColor = "lightslategrey"; 
+TDs[2].style.color = "white";
+TDs[3].style.backgroundColor = "lightslategrey";
+TDs[3].style.color = "white"; 
+TDs[4].style.backgroundColor = "lightslategrey";
+TDs[4].style.color = "white"; 
 TDs[5].style.backgroundColor = "lightslategrey";
+TDs[5].style.color = "white";
 
 TDs[7].style.backgroundColor = "lightskyblue";
 TDs[8].style.backgroundColor = "lightskyblue";
