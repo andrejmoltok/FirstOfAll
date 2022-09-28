@@ -13,18 +13,14 @@ function clr() {
 }
 
 var tr = Array.from(document.getElementsByTagName('tr'));
-console.log(tr);
-console.log(tr[0].children.length);
-console.log(tr[1].children.length);
-var lastTR = tr.slice(1,tr.length);
-console.log(lastTR.length);
-console.log(lastTR[1].length);
+console.log(tr.length);
+tr[0].display = "flex";
+tr[0].style.justifyContent = "flex-end";
 
-var row1 = ['*','7','8','9'];
-var row2 = ['/','4','5','6'];
-var row3 = ['+','1','2','3'];
-var row4 = ['-','=','.','0'];
-
+var row1 = ['7','8','9','*'];
+var row2 = ['4','5','6','/'];
+var row3 = ['1','2','3','+'];
+var row4 = ['0','.','=','-'];
 
 for (let j = 0; j < row1.length; j++) {
   var button = document.createElement('input');
