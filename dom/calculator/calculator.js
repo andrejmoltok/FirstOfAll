@@ -24,7 +24,6 @@ function clr() {
 }
 
 var tr = Array.from(document.getElementsByTagName('tr'));
-console.log(tr.length);
 
 var row0 = ['%','x**2','x**y','gyök'];
 var row1 = ['*','7','8','9'];
@@ -86,7 +85,6 @@ for (let a = 0; a < selectTDs.length-1; a++) {
     check();
     display(selectTDs[a].value);
     count = 0;
-    
   });
 }
 
