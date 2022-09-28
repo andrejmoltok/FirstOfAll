@@ -71,8 +71,8 @@ var tomatoLeft = document.getElementById('tomatoLeft');
 //eventlistener for leftBox
 leftBox.addEventListener("click", function(event) {
     if (event.target && event.target.matches('#breadLeft')) {
-        isClicked = "bread";
-        console.log("Bread Clicked");
+        isClicked = "breadLeft";
+        console.log("BreadLeft Clicked");
         breadLeft.style.backgroundColor = "lightgray";
         breadLeft.style.cursor = "default";
         milkLeft.style.backgroundColor = "white";
@@ -80,8 +80,8 @@ leftBox.addEventListener("click", function(event) {
         tomatoLeft.style.backgroundColor = "white";
         return isClicked;
     } else if (event.target && event.target.matches('#milkLeft')) {
-        isClicked = "milk";
-        console.log("Milk Clicked");
+        isClicked = "milkLeft";
+        console.log("MilkLeft Clicked");
         milkLeft.style.backgroundColor = "lightgray";
         milkLeft.style.cursor = "default";
         breadLeft.style.backgroundColor = "white";
@@ -89,8 +89,8 @@ leftBox.addEventListener("click", function(event) {
         tomatoLeft.style.backgroundColor = "white";
         return isClicked;
     } else if (event.target && event.target.matches('#orangeLeft')) {
-        isClicked = "orange";
-        console.log("Orange Clicked");
+        isClicked = "orangeLeft";
+        console.log("OrangeLeft Clicked");
         orangeLeft.style.backgroundColor = "lightgray";
         orangeLeft.style.cursor = "default";
         breadLeft.style.backgroundColor = "white";
@@ -98,8 +98,8 @@ leftBox.addEventListener("click", function(event) {
         tomatoLeft.style.backgroundColor = "white";
         return isClicked;
     } else if (event.target && event.target.matches('#tomatoLeft')) {
-        isClicked = "tomato";
-        console.log("Tomato Left Clicked");
+        isClicked = "tomatoLeft";
+        console.log("TomatoLeft Clicked");
         tomatoLeft.style.backgroundColor = "lightgray";
         tomatoLeft.style.cursor = "default";
         milkLeft.style.backgroundColor = "white";
@@ -113,8 +113,8 @@ leftBox.addEventListener("click", function(event) {
 //eventlistener for rightBox
 rightBox.addEventListener("click", function(e) {
     if (e.target && e.target.matches("#breadRight")) {
-        isClicked = "bread";
-        console.log("Bread Clicked");
+        isClicked = "breadRight";
+        console.log("BreadRight Clicked");
         breadRight.style.backgroundColor = "lightgray";
         breadRight.style.cursor = "default";
         milkRight.style.backgroundColor = "white";
@@ -122,8 +122,8 @@ rightBox.addEventListener("click", function(e) {
         tomatoRight.style.backgroundColor = "white";
         return isClicked;
     } else if (e.target && e.target.matches("#milkRight")) {
-        isClicked = "milk";
-        console.log("Milk Clicked");
+        isClicked = "milkRight";
+        console.log("MilkRight Clicked");
         milkRight.style.backgroundColor = "lightgray";
         milkRight.style.cursor = "default";
         breadRight.style.backgroundColor = "white";
@@ -131,8 +131,8 @@ rightBox.addEventListener("click", function(e) {
         tomatoRight.style.backgroundColor = "white";
         return isClicked;
     } else if (e.target && e.target.matches("#orangeRight")) {
-        isClicked = "orange";
-        console.log("Orange Right Clicked");
+        isClicked = "orangeRight";
+        console.log("OrangeRight Clicked");
         orangeRight.style.backgroundColor = "lightgray";
         orangeRight.style.cursor = "default";
         breadRight.style.backgroundColor = "white";
@@ -140,8 +140,8 @@ rightBox.addEventListener("click", function(e) {
         tomatoRight.style.backgroundColor = "white";
         return isClicked;
     } else if (e.target && e.target.matches("#tomatoRight")) {
-        isClicked = "tomato";
-        console.log("Tomato Right Clicked");
+        isClicked = "tomatoRight";
+        console.log("TomatoRight Clicked");
         tomatoRight.style.backgroundColor = "lightgray";
         tomatoRight.style.cursor = "default";
         milkRight.style.backgroundColor = "white";
@@ -155,9 +155,9 @@ rightBox.addEventListener("click", function(e) {
 
 //buttonAdd
 buttonAdd.addEventListener('click',function() {    
-    if (isClicked === "bread") {
-        var breadDiv = document.createElement('div');
+    if (isClicked === "breadLeft") {
         breadLeft.remove();
+        var breadDiv = document.createElement('div');
         leftBox.style.justifyContent = "flex-start";
         breadDiv.innerText = "bread";
         breadDiv.setAttribute('id', "breadRight");
@@ -166,9 +166,9 @@ buttonAdd.addEventListener('click',function() {
         rightBox.appendChild(breadDiv);
         isClicked = "";
         console.log("bread added to rightBox");
-    } else if (isClicked === "milk") {
-        var milkDiv = document.createElement('div');
+    } else if (isClicked === "milkLeft") {
         milkLeft.remove();
+        var milkDiv = document.createElement('div');
         leftBox.style.justifyContent = "flex-start";
         milkDiv.innerText = "milk";
         milkDiv.setAttribute('id', "milkRight");
@@ -177,9 +177,9 @@ buttonAdd.addEventListener('click',function() {
         rightBox.appendChild(milkDiv);
         isClicked = "";
         console.log("milk added to rightBox");
-    } else if (isClicked === "orange") {
-        var orangeDiv = document.createElement('div');
+    } else if (isClicked === "orangeLeft") {
         orangeLeft.remove();
+        var orangeDiv = document.createElement('div');
         leftBox.style.justifyContent = "flex-start";
         orangeDiv.innerText = "orange";
         orangeDiv.setAttribute('id', "orangeRight");
@@ -188,9 +188,9 @@ buttonAdd.addEventListener('click',function() {
         rightBox.appendChild(orangeDiv);
         isClicked = "";
         console.log("orange added to rightBox");
-    } else if (isClicked === "tomato") {
-        var tomatoDiv = document.createElement('div');
+    } else if (isClicked === "tomatoLeft") {
         tomatoLeft.remove();
+        var tomatoDiv = document.createElement('div');
         leftBox.style.justifyContent = "flex-start";
         tomatoDiv.innerText = "tomato";
         tomatoDiv.setAttribute('id', "tomatoRight");
@@ -204,9 +204,9 @@ buttonAdd.addEventListener('click',function() {
 
 //buttonRemove
 buttonRemove.addEventListener('click',function() {    
-    if (isClicked === "bread") {
-        var breadDiv = document.createElement('div');
+    if (isClicked === "breadRight") {
         breadRight.remove();
+        var breadDiv = document.createElement('div');
         rightBox.style.justifyContent = "flex-start";
         breadDiv.innerText = "milk";
         breadDiv.setAttribute('id', "milkLeft");
@@ -215,9 +215,9 @@ buttonRemove.addEventListener('click',function() {
         leftBox.appendChild(breadDiv);
         isClicked = "";
         console.log("bread removed from rightBox");
-    } else if (isClicked === "milk") {
-        var milkDiv = document.createElement('div');
+    } else if (isClicked === "milkRight") {
         milkRight.remove();
+        var milkDiv = document.createElement('div');
         rightBox.style.justifyContent = "flex-start";
         milkDiv.innerText = "milk";
         milkDiv.setAttribute('id', "milkLeft");
@@ -226,9 +226,9 @@ buttonRemove.addEventListener('click',function() {
         leftBox.appendChild(milkDiv);
         isClicked = "";
         console.log("milk removed from rightBox");
-    } else if (isClicked === "orange") {
-        var orangeDiv = document.createElement('div');
+    } else if (isClicked === "orangeRight") {
         orangeRight.remove();
+        var orangeDiv = document.createElement('div');
         rightBox.style.justifyContent = "flex-start";
         orangeDiv.innerText = "orange";
         orangeDiv.setAttribute('id', "orangeLeft");
@@ -237,9 +237,9 @@ buttonRemove.addEventListener('click',function() {
         leftBox.appendChild(orangeDiv);
         isClicked = "";
         console.log("orange removed from rightBox");
-    } else if (isClicked === "tomato") {
-        var tomatoDiv = document.createElement('div');
+    } else if (isClicked === "tomatoRight") {
         tomatoRight.remove();
+        var tomatoDiv = document.createElement('div');
         rightBox.style.justifyContent = "flex-start";
         tomatoDiv.innerText = "tomato";
         tomatoDiv.setAttribute('id', "tomatoLeft");
@@ -251,6 +251,8 @@ buttonRemove.addEventListener('click',function() {
     }
 });
 
-buttonDown.addEventListener("click", function() {
-
-});
+// buttonDown.addEventListener("click", function() {
+//     if (isClicked == "breadRight") {
+//         breadRight.parentNode.insertBefore(breadRight, breadRight.nextSibling);
+//     }
+// });
