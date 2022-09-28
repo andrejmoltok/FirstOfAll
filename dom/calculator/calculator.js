@@ -83,7 +83,7 @@ for (let m = 0; m < row4.length; m++) {
 var TDs = Array.from(document.getElementsByTagName('input'));
 var selectTDs = TDs.slice(6,TDs.length);
 
-// baclground colors for td's
+// background colors for td's
 for (let b = 6; b < TDs.length; b+=4) {
   TDs[b].style.backgroundColor = "lightslategrey";
 }
@@ -117,29 +117,34 @@ for (let a = 0; a < selectTDs.length-1; a++) {
   });
 }
 
+// modulo operator
 TDs[2].addEventListener('click',function() {
   check();
   display(TDs[2].value);
   count = 0;
 });
 
+// power of 2 operator
 TDs[3].addEventListener('click',function() {
   check();
   display("**2");
   count = 0;
 });
 
+// power of something else operator
 TDs[4].addEventListener('click',function() {
   check();
   display("**");
   count = 0;
 });
 
+// square root operator
 TDs[5].addEventListener('click',function() {
   check();
   sqrt();
 });
 
+// do the calc
 selectTDs[15].addEventListener('click',function() {
   evaluation();
 });
