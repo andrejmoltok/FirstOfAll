@@ -1,24 +1,27 @@
+var count = 0;
+
 function display(val) {
-  document.getElementById("textval").value += val
+  document.getElementById("textval").value += val;
 }
 
 function evaluation() {
-  let x = document.getElementById("textval").value
-  let y = eval(x)
-  document.getElementById("textval").value = y
+  let x = document.getElementById("textval").value;
+  let y = eval(x);
+  document.getElementById("textval").value = y;
+  return count++;
 }
 
 function clr() {
-  document.getElementById("textval").value = ""
+  document.getElementById("textval").value = "";
 }
 
 var tr = Array.from(document.getElementsByTagName('tr'));
 //console.log(tr.length);
 
-var row1 = ['7','8','9','*'];
-var row2 = ['4','5','6','/'];
-var row3 = ['1','2','3','+'];
-var row4 = ['0','.','=','-'];
+var row1 = ['*','7','8','9'];
+var row2 = ['/','4','5','6'];
+var row3 = ['+','1','2','3'];
+var row4 = ['-','.','0','='];
 
 for (let j = 0; j < row1.length; j++) {
   var button = document.createElement('input');
@@ -56,6 +59,23 @@ for (let m = 0; m < row4.length; m++) {
   td.appendChild(button);
 }
 
-var tidees = Array.from(document.getElementsByTagName('input'));
-var selectTDs = tidees.slice(2,tidees.length);
-selectTDs[2].onclick = display(7);
+var TDs = Array.from(document.getElementsByTagName('input'));
+var selectTDs = TDs.slice(2,TDs.length);
+
+for (let a = 0; a < selectTDs.length-1; a++) {
+  selectTDs[a].addEventListener('click',function() {
+    check();
+    display(selectTDs[a].value);
+    count = 0;
+  });
+}
+
+selectTDs[15].addEventListener('click',function() {
+  evaluation();
+});
+
+function check() {
+  if (count > 0) {
+    clr();
+  }
+}
