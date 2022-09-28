@@ -79,6 +79,29 @@ for (let m = 0; m < row4.length; m++) {
 var TDs = Array.from(document.getElementsByTagName('input'));
 var selectTDs = TDs.slice(6,TDs.length);
 
+TDs[0].style.backgroundColor = "lightslategrey";
+TDs[2].style.backgroundColor = "lightslategrey";
+TDs[3].style.backgroundColor = "lightslategrey"; 
+TDs[4].style.backgroundColor = "lightslategrey"; 
+TDs[5].style.backgroundColor = "lightslategrey";
+
+TDs[7].style.backgroundColor = "lightskyblue";
+TDs[8].style.backgroundColor = "lightskyblue";
+TDs[9].style.backgroundColor = "lightskyblue";
+TDs[11].style.backgroundColor = "lightskyblue";
+TDs[12].style.backgroundColor = "lightskyblue";
+TDs[13].style.backgroundColor = "lightskyblue";
+TDs[15].style.backgroundColor = "lightskyblue";
+TDs[16].style.backgroundColor = "lightskyblue";
+TDs[17].style.backgroundColor = "lightskyblue";
+TDs[19].style.backgroundColor = "lightskyblue";
+TDs[20].style.backgroundColor = "lightskyblue";
+TDs[21].style.backgroundColor = "lightskyblue";
+
+for (let b = 6; b < TDs.length; b+=4) {
+  TDs[b].style.backgroundColor = "lightslategrey";
+}
+
 for (let a = 0; a < selectTDs.length-1; a++) {
   console.log(selectTDs[a].value);
   selectTDs[a].addEventListener('click',function() {

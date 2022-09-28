@@ -8,17 +8,14 @@
 
 input[type="button"] {
     border-radius: 5px;
-    background-color: blue;
-    color: white;
+    color: black;
     border-color: black;
     width: 100%;
+    font-weight: bold;
 }
 
 input[type="text"] {
-    /*border-radius: 10px;*/
+    border-radius: 10px;
     text-align: right;
-    /*background-color: black;*/
-    /*color: white;*/
-    /*border-color: white;*/
-    width: 100%
+    width: 100%;
 }
