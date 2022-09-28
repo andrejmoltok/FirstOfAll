@@ -1,5 +1,7 @@
+// evaluation function run count
 var count = 0;
 
+// functions used in calculation
 function display(val) {
   document.getElementById("textval").value += val;
   return val;
@@ -23,6 +25,7 @@ function clr() {
   document.getElementById("textval").value = "";
 }
 
+// populating calculator with functional buttons
 var tr = Array.from(document.getElementsByTagName('tr'));
 
 var row0 = ['%','x**2','x**y','gyök'];
@@ -76,8 +79,14 @@ for (let m = 0; m < row4.length; m++) {
   td.appendChild(button);
 }
 
+// all TD's created and selecting only functional ones
 var TDs = Array.from(document.getElementsByTagName('input'));
 var selectTDs = TDs.slice(6,TDs.length);
+
+// baclground colors for td's
+for (let b = 6; b < TDs.length; b+=4) {
+  TDs[b].style.backgroundColor = "lightslategrey";
+}
 
 TDs[0].style.backgroundColor = "lightslategrey";
 TDs[2].style.backgroundColor = "lightslategrey";
@@ -98,10 +107,7 @@ TDs[19].style.backgroundColor = "lightskyblue";
 TDs[20].style.backgroundColor = "lightskyblue";
 TDs[21].style.backgroundColor = "lightskyblue";
 
-for (let b = 6; b < TDs.length; b+=4) {
-  TDs[b].style.backgroundColor = "lightslategrey";
-}
-
+// add eventlistener to selected TD's
 for (let a = 0; a < selectTDs.length-1; a++) {
   console.log(selectTDs[a].value);
   selectTDs[a].addEventListener('click',function() {
@@ -138,6 +144,7 @@ selectTDs[15].addEventListener('click',function() {
   evaluation();
 });
 
+// check how many times evaluation function has run
 function check() {
   if (count > 0) {
     clr();
