@@ -62,49 +62,40 @@ items.forEach((elem) => {
     leftBox.appendChild(lBdiv);
 });
 
-//id selector section
-var breadLeft = document.getElementById('breadLeft');
-var milkLeft = document.getElementById('milkLeft');
-var orangeLeft = document.getElementById('orangeLeft');
-var tomatoLeft = document.getElementById('tomatoLeft');
+console.log(leftBox.children);
 
 //eventlistener for leftBox
 leftBox.addEventListener("click", function(event) {
-    if (event.target && event.target.matches('#breadLeft')) {
+    breadLeft.style.backgroundColor = "white";
+    milkLeft.style.backgroundColor = "white";
+    orangeLeft.style.backgroundColor = "white";
+    tomatoLeft.style.backgroundColor = "white";
+    if (event.target && event.target.matches('div#breadLeft')) {
         isClicked = "breadLeft";
         console.log("BreadLeft Clicked");
         breadLeft.style.backgroundColor = "lightgray";
         breadLeft.style.cursor = "default";
-        milkLeft.style.backgroundColor = "white";
-        orangeLeft.style.backgroundColor = "white";
-        tomatoLeft.style.backgroundColor = "white";
         return isClicked;
-    } else if (event.target && event.target.matches('#milkLeft')) {
+    }
+    if (event.target && event.target.matches('div#milkLeft')) {
         isClicked = "milkLeft";
         console.log("MilkLeft Clicked");
         milkLeft.style.backgroundColor = "lightgray";
         milkLeft.style.cursor = "default";
-        breadLeft.style.backgroundColor = "white";
-        orangeLeft.style.backgroundColor = "white";
-        tomatoLeft.style.backgroundColor = "white";
         return isClicked;
-    } else if (event.target && event.target.matches('#orangeLeft')) {
+    }
+    if (event.target && event.target.matches('div#orangeLeft')) {
         isClicked = "orangeLeft";
         console.log("OrangeLeft Clicked");
         orangeLeft.style.backgroundColor = "lightgray";
         orangeLeft.style.cursor = "default";
-        breadLeft.style.backgroundColor = "white";
-        milkLeft.style.backgroundColor = "white";
-        tomatoLeft.style.backgroundColor = "white";
         return isClicked;
-    } else if (event.target && event.target.matches('#tomatoLeft')) {
+    }
+    if (event.target && event.target.matches('div#tomatoLeft')) {
         isClicked = "tomatoLeft";
         console.log("TomatoLeft Clicked");
         tomatoLeft.style.backgroundColor = "lightgray";
         tomatoLeft.style.cursor = "default";
-        milkLeft.style.backgroundColor = "white";
-        orangeLeft.style.backgroundColor = "white";
-        breadLeft.style.backgroundColor = "white";
         return isClicked;
     }
 });
@@ -117,36 +108,27 @@ rightBox.addEventListener("click", function(e) {
         console.log("BreadRight Clicked");
         breadRight.style.backgroundColor = "lightgray";
         breadRight.style.cursor = "default";
-        milkRight.style.backgroundColor = "white";
-        orangeRight.style.backgroundColor = "white";
-        tomatoRight.style.backgroundColor = "white";
         return isClicked;
-    } else if (e.target && e.target.matches("#milkRight")) {
+    }
+    if (e.target && e.target.matches("#milkRight")) {
         isClicked = "milkRight";
         console.log("MilkRight Clicked");
         milkRight.style.backgroundColor = "lightgray";
         milkRight.style.cursor = "default";
-        breadRight.style.backgroundColor = "white";
-        orangeRight.style.backgroundColor = "white";
-        tomatoRight.style.backgroundColor = "white";
         return isClicked;
-    } else if (e.target && e.target.matches("#orangeRight")) {
+    }
+    if (e.target && e.target.matches("#orangeRight")) {
         isClicked = "orangeRight";
         console.log("OrangeRight Clicked");
         orangeRight.style.backgroundColor = "lightgray";
         orangeRight.style.cursor = "default";
-        breadRight.style.backgroundColor = "white";
-        milkRight.style.backgroundColor = "white";
-        tomatoRight.style.backgroundColor = "white";
         return isClicked;
-    } else if (e.target && e.target.matches("#tomatoRight")) {
+    }
+    if (e.target && e.target.matches("#tomatoRight")) {
         isClicked = "tomatoRight";
         console.log("TomatoRight Clicked");
         tomatoRight.style.backgroundColor = "lightgray";
         tomatoRight.style.cursor = "default";
-        milkRight.style.backgroundColor = "white";
-        orangeRight.style.backgroundColor = "white";
-        breadRight.style.backgroundColor = "white";
         return isClicked;
     }
 });
@@ -166,7 +148,8 @@ buttonAdd.addEventListener('click',function() {
         rightBox.appendChild(breadDiv);
         isClicked = "";
         console.log("bread added to rightBox");
-    } else if (isClicked === "milkLeft") {
+    }
+    if (isClicked === "milkLeft") {
         milkLeft.remove();
         var milkDiv = document.createElement('div');
         leftBox.style.justifyContent = "flex-start";
@@ -177,7 +160,8 @@ buttonAdd.addEventListener('click',function() {
         rightBox.appendChild(milkDiv);
         isClicked = "";
         console.log("milk added to rightBox");
-    } else if (isClicked === "orangeLeft") {
+    }
+    if (isClicked === "orangeLeft") {
         orangeLeft.remove();
         var orangeDiv = document.createElement('div');
         leftBox.style.justifyContent = "flex-start";
@@ -188,7 +172,8 @@ buttonAdd.addEventListener('click',function() {
         rightBox.appendChild(orangeDiv);
         isClicked = "";
         console.log("orange added to rightBox");
-    } else if (isClicked === "tomatoLeft") {
+    }
+    if (isClicked === "tomatoLeft") {
         tomatoLeft.remove();
         var tomatoDiv = document.createElement('div');
         leftBox.style.justifyContent = "flex-start";
@@ -215,7 +200,8 @@ buttonRemove.addEventListener('click',function() {
         leftBox.appendChild(breadDiv);
         isClicked = "";
         console.log("bread removed from rightBox");
-    } else if (isClicked === "milkRight") {
+    }
+    if (isClicked === "milkRight") {
         milkRight.remove();
         var milkDiv = document.createElement('div');
         rightBox.style.justifyContent = "flex-start";
@@ -226,7 +212,8 @@ buttonRemove.addEventListener('click',function() {
         leftBox.appendChild(milkDiv);
         isClicked = "";
         console.log("milk removed from rightBox");
-    } else if (isClicked === "orangeRight") {
+    }
+    if (isClicked === "orangeRight") {
         orangeRight.remove();
         var orangeDiv = document.createElement('div');
         rightBox.style.justifyContent = "flex-start";
@@ -237,15 +224,16 @@ buttonRemove.addEventListener('click',function() {
         leftBox.appendChild(orangeDiv);
         isClicked = "";
         console.log("orange removed from rightBox");
-    } else if (isClicked === "tomatoRight") {
+    }
+    if (isClicked === "tomatoRight") {
         tomatoRight.remove();
         var tomatoDiv = document.createElement('div');
+        leftBox.appendChild(tomatoDiv);
+        tomatoDiv.setAttribute('id', "tomatoLeft");
         rightBox.style.justifyContent = "flex-start";
         tomatoDiv.innerText = "tomato";
-        tomatoDiv.setAttribute('id', "tomatoLeft");
         tomatoDiv.style.width = "127px";
         tomatoDiv.style.height = "31.5px";
-        leftBox.appendChild(tomatoDiv);
         isClicked = "";
         console.log("tomato removed from rightBox");
     }
