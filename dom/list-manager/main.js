@@ -46,16 +46,10 @@ var functionList = "Up,>>,<<,Down".split(',');
 var endList = "' ',' ',' ',' '".split(',');
 
 // forEach function for startList content
-startList.forEach((v) => {
-    startFunction(v);
-});
+startList.forEach(startFunction);
 
 // forEach function for functionList content
-functionList.forEach((v) => {
-    funcFunction(v);
-});
+functionList.forEach(funcFunction);
 
 // forEach function for endList future content
-endList.forEach((v) => {
-    endFunction(v);
-});
+endList.forEach(endFunction);
