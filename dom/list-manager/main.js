@@ -1,9 +1,9 @@
-// names for three tables to create
-var mainData = "start,func,end".split(',');
-
 // main DIV container for three tables
 var div = document.createElement('DIV');
 div.setAttribute('id','container');
+
+// names for three tables to create
+var mainData = "start,func,end".split(',');
 
 // forEach for mainData array to generate tables
 mainData.forEach((v) => {
