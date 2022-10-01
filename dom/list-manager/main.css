@@ -1,3 +1,8 @@
+:root {
+    --wide: 70px;
+    --font: 18px;
+}
+
 table, td {
     border: 1px solid black;
     font-size: 18px;
@@ -14,7 +19,20 @@ table, td {
     gap: 30px;
 }
 
+#startTable {
+    text-align: center;
+    font-size: var(--font);
+    width: var(--wide);
+}
+
 #funcTable {
     text-align: center;
-    font-size: 18px;
+    font-size: var(--font);
+    width: var(--wide);
+}
+
+#endTable {
+    text-align: center;
+    font-size: var(--font);
+    width: var(--wide);
 }

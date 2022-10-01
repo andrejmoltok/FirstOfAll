@@ -13,43 +13,40 @@ mainData.forEach((v) => {
     document.body.appendChild(div);
 });
 
-// startFunction to create rows inside each of the mainData tables
-function startFunction(item) {
-    var z = document.createElement("TR");
-    var t = document.createTextNode(item);
-    z.setAttribute("id", "start" + item);
-    z.appendChild(t);
-    document.getElementById("startTable").appendChild(z);
-}
-
-//funcFunction to create functional buttons to move list items
-function funcFunction(item) {
-    var z = document.createElement("TR");
-    var t = document.createTextNode(item);
-    z.setAttribute("id", "func" + item);
-    z.appendChild(t);
-    document.getElementById("funcTable").appendChild(z);
-}
-
-// endFunction to create empty table for future content
-function endFunction(item) {
-    var z = document.createElement("TR");
-    var t = document.createTextNode(item);
-    z.setAttribute("id", "endTr");
-    z.appendChild(t);
-    document.getElementById("endTable").appendChild(z);
-}
-
 // lists of content going inside of mainData tables
 var startList = "bread,milk,orange,tomato".split(',');
 var functionList = "Up,>>,<<,Down".split(',');
 var endList = "' ',' ',' ',' '".split(',');
 
-// forEach function for startList content
-startList.forEach(startFunction);
+// replacement function for 3 repetitive functions doing the same thing
+function func(list) {
+    list.forEach((v) => {
+        var z = document.createElement("TR");
+        var t = document.createTextNode(v);
+        if (v === "bread" || v === "milk" || v === "orange" || v === "tomato") {
+            z.setAttribute("id", "start" + v);
+            //console.log(z);
+        }
+        if (v === "Up" || v === ">>" || v === "<<" || v === "Down") {
+            z.setAttribute("id", "func" + v);
+            //console.log(z);
+        }
+        if (v === "' '") {
+            z.setAttribute("id", "end" + v);
+            //console.log(z);
+        }
+        z.appendChild(t);
+        //console.log(t);
+        if (v === "bread" || v === "milk" || v === "orange" || v === "tomato") {
+            document.getElementById("startTable").appendChild(z);
+        } else if (v === "Up" || v === ">>" || v === "<<" || v === "Down") {
+            document.getElementById("funcTable").appendChild(z);
+        } else if (v === "' '") {
+            document.getElementById("endTable").appendChild(z);
+        }
+    });
+}
 
-// forEach function for functionList content
-functionList.forEach(funcFunction);
-
-// forEach function for endList future content
-endList.forEach(endFunction);
+func(startList,mainData);
+func(functionList,mainData);
+func(endList,mainData);
