@@ -19,7 +19,7 @@ var functionList = "Up,>>,<<,Down".split(',');
 var endList = "' ',' ',' ',' '".split(',');
 
 // replacement function for 3 repetitive functions doing the same thing
-function func(list) {
+function rendezo(list) {
     list.forEach((v) => {
         var z = document.createElement("TR");
         var t = document.createTextNode(v);
@@ -47,6 +47,6 @@ function func(list) {
     });
 }
 
-func(startList);
-func(functionList);
-func(endList);
+rendezo(startList);
+rendezo(functionList);
+rendezo(endList);
