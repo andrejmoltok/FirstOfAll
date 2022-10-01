@@ -26,9 +26,17 @@ table, td {
 }
 
 #funcTable {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=button]{
     text-align: center;
-    font-size: var(--font);
-    width: var(--wide);
+    font-size: 14px;
+    width: 70px;
+    height: 24px;
 }
 
 #endTable {

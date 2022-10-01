@@ -15,33 +15,47 @@ mainData.forEach((v) => {
 
 // lists of content going inside of mainData tables
 var startList = "bread,milk,orange,tomato".split(',');
+console.log(startList);
 var functionList = "Up,>>,<<,Down".split(',');
-var endList = "' ',' ',' ',' '".split(',');
+console.log(functionList);
+var endList = " , , , ".split(',');
+console.log(endList);
 
 // replacement function for 3 repetitive functions doing the same thing
 function rendezo(list) {
     list.forEach((v) => {
         var z = document.createElement("TR");
         var t = document.createTextNode(v);
-        if (v === "bread" || v === "milk" || v === "orange" || v === "tomato") {
+        if (list === startList) {
+            //v === "bread" || v === "milk" || v === "orange" || v === "tomato"
             z.setAttribute("id", "start" + v);
             //console.log(z);
+            z.appendChild(t);
         }
-        if (v === "Up" || v === ">>" || v === "<<" || v === "Down") {
-            z.setAttribute("id", "func" + v);
+        if (list === functionList) {
+            //v === "Up" || v === ">>" || v === "<<" || v === "Down"
+            var x = document.createElement("INPUT");
+            x.setAttribute("id", "func" + v);
+            x.setAttribute("type", "button");
+            x.value = v;
             //console.log(z);
         }
-        if (v === "' '") {
+        if (list === endList) {
+            //v === "' '"
             z.setAttribute("id", "end" + v);
             //console.log(z);
+            z.appendChild(t);
         }
-        z.appendChild(t);
+        
         //console.log(t);
-        if (v === "bread" || v === "milk" || v === "orange" || v === "tomato") {
+        if (list === startList) {
+            //v === "bread" || v === "milk" || v === "orange" || v === "tomato"
             document.getElementById("startTable").appendChild(z);
-        } else if (v === "Up" || v === ">>" || v === "<<" || v === "Down") {
-            document.getElementById("funcTable").appendChild(z);
-        } else if (v === "' '") {
+        } else if (list === functionList) {
+            //v === "Up" || v === ">>" || v === "<<" || v === "Down"
+            document.getElementById("funcTable").appendChild(x);
+        } else if (list === endList) {
+            //v === "' '"
             document.getElementById("endTable").appendChild(z);
         }
     });
@@ -50,3 +64,7 @@ function rendezo(list) {
 rendezo(startList);
 rendezo(functionList);
 rendezo(endList);
+
+// var startTable = document.getElementById('startTable');
+var funcTable = document.getElementById('funcTable');
+// var endTable = document.getElementById('endTable');
