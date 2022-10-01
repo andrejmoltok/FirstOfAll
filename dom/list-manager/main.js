@@ -47,6 +47,6 @@ function func(list) {
     });
 }
 
-func(startList,mainData);
-func(functionList,mainData);
-func(endList,mainData);
+func(startList);
+func(functionList);
+func(endList);
