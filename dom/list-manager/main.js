@@ -107,22 +107,169 @@ function kivalaszto(event) {
 
 funcTable.addEventListener('click', hozzaAdas);
 
-function hozzaAdas(event) {
+function hozzaAdas() {
+    
     if (isSelected == "startbread") {
-        console.log("selected = ",isSelected);
-        var newList = startList.splice(startList.indexOf(startList[0]) + 1,startList.length-1);
-        console.log(newList);
+        //console.log("selected = ",isSelected);
+
+        // create a newList variable from startList.splice configuration
+        var removed = startList.splice(0,1);
+
+        // set endList first element to startList first element
+        endList[0] = removed;
+
+        // console.log(newList);
+        // console.log(startList);
+        // console.log(endList);
+
+        // delete all rows inside startTable for regeneration process
         startTable.deleteRow(-1);
         startTable.deleteRow(-1);
         startTable.deleteRow(-1);
         startTable.deleteRow(-1);
-        var enderList = endList;
-        enderList[0] = "bread";
-        console.log(enderList);
-        rendezo(newList);
-        rendezo(enderList);
+
+        //regenerate startTable with contents of newList variable
+        rendezo(startList);
+
+        // generate endTable with new content added from startTable and startList
+        rendezo(endList);
+
+        // highlight next element in startTable made from newList array
+        if (startList[0] === "milk") {
+            document.getElementById('startmilk').style.backgroundColor = "lightgray";
+            isSelected = "startmilk";
+        }
+        if (startList[0] === "orange") {
+            document.getElementById('startorange').style.backgroundColor = "lightgray";
+            isSelected = "startorange";
+        }
+        if (startList[0] === "tomato") {
+            document.getElementById('starttomato').style.backgroundColor = "lightgray";
+            isSelected = "starttomato";
+        }
+
+    }
+    
+    if (isSelected === "startmilk") {
+        //console.log("selected = ",isSelected);
+
+        // create a newList variable from startList.splice configuration
+        var removed = startList.splice(startList.indexOf(startList[1]),1);
+
+        // set endList first element to startList first element
+        endList[0] = removed;
+
+        // console.log(newList);
+        // console.log(startList);
+        // console.log(endList);
+
+        // delete all rows inside startTable for regeneration process
+        startTable.deleteRow(-1);
+        startTable.deleteRow(-1);
+        startTable.deleteRow(-1);
+        startTable.deleteRow(-1);
+
+        //regenerate startTable with contents of newList variable
+        rendezo(startList);
+
+        // generate endTable with new content added from startTable and startList
+        rendezo(endList);
+
+        // highlight next element in startTable made from newList array
+        if (startList[0] === "bread") {
+            document.getElementById('startbread').style.backgroundColor = "lightgray";
+            isSelected = "startbread";
+        }
+        if (startList[0] === "orange") {
+            document.getElementById('startorange').style.backgroundColor = "lightgray";
+            isSelected = "startorange";
+        }
+        if (startList[0] === "tomato") {
+            document.getElementById('starttomato').style.backgroundColor = "lightgray";
+            isSelected = "starttomato";
+        }
+
+    }
+    
+    if (isSelected === "startorange") {
+        //console.log("selected = ",isSelected);
+
+        // create a newList variable from startList.splice configuration
+        var removed = startList.splice(startList.indexOf(startList[2]),1);
+
+        // set endList first element to startList first element
+        endList[0] = removed;
+
+        // console.log(newList);
+        // console.log(startList);
+        // console.log(endList);
+
+        // delete all rows inside startTable for regeneration process
+        startTable.deleteRow(-1);
+        startTable.deleteRow(-1);
+        startTable.deleteRow(-1);
+        startTable.deleteRow(-1);
+
+        //regenerate startTable with contents of newList variable
+        rendezo(startList);
+
+        // generate endTable with new content added from startTable and startList
+        rendezo(endList);
+
+        // highlight next element in startTable made from newList array
+        if (startList[0] === "bread") {
+            document.getElementById('startbread').style.backgroundColor = "lightgray";
+            isSelected = "startbread";
+        }
+        if (startList[0] === "milk") {
+            document.getElementById('startmilk').style.backgroundColor = "lightgray";
+            isSelected = "startmilk";
+        }
+        if (startList[0] === "tomato") {
+            document.getElementById('starttomato').style.backgroundColor = "lightgray";
+            isSelected = "starttomato";
+        }
+
+    }
+    
+    if (isSelected === "starttomato") {
+        //console.log("selected = ",isSelected);
+
+        // create a newList variable from startList.splice configuration
+        var removed = startList.splice(startList.indexOf(startList[3]),1);
+
+        // set endList first element to startList first element
+        endList[0] = removed;
+
+        // console.log(newList);
+        // console.log(startList);
+        // console.log(endList);
+
+        // delete all rows inside startTable for regeneration process
+        startTable.deleteRow(-1);
+        startTable.deleteRow(-1);
+        startTable.deleteRow(-1);
+        startTable.deleteRow(-1);
+
+        //regenerate startTable with contents of newList variable
+        rendezo(startList);
+
+        // generate endTable with new content added from startTable and startList
+        rendezo(endList);
+
+        // highlight next element in startTable made from newList array
+        if (startList[0] === "bread") {
+            document.getElementById('startbread').style.backgroundColor = "lightgray";
+            isSelected = "startbread";
+        }
+        if (startList[0] === "milk") {
+            document.getElementById('startmilk').style.backgroundColor = "lightgray";
+            isSelected = "startmilk";
+        }
+        if (startList[0] === "orange") {
+            document.getElementById('startorange').style.backgroundColor = "lightgray";
+            isSelected = "startorange";
+        }
+
     }
 }
-
-// var removed = startList.splice(startList.indexOf(startList[0]) + 1,startList.length);
-// console.log(removed);
