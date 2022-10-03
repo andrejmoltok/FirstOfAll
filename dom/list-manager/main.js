@@ -57,26 +57,23 @@ var startTable = document.getElementById('startTable');
 var funcTable = document.getElementById('funcTable');
 var endTable = document.getElementById('endTable');
 
-startTable.addEventListener('click', kivalaszto);
 
+
+// isSelected string used for checking if one element is selected or not already
 var isSelected = "";
 
+// set default cursor style for elements within startTable
+document.getElementById('startbread').style.cursor = "default";
+document.getElementById('startmilk').style.cursor = "default";
+document.getElementById('startorange').style.cursor = "default";
+document.getElementById('starttomato').style.cursor = "default";
+
+// eventlistener for startTable and startList
+startTable.addEventListener('click', kivalaszto);
+
 function kivalaszto(event) {
-    
-    // set initial backgroundColor for selected element within startTable
-    document.getElementById('startbread').style.backgroundColor = "white";
-    document.getElementById('startmilk').style.backgroundColor = "white";
-    document.getElementById('startorange').style.backgroundColor = "white";
-    document.getElementById('starttomato').style.backgroundColor = "white";
-    //console.log(startTable.children);
-
-    // set default cursor style for elements within startTable
-    document.getElementById('startbread').style.cursor = "default";
-    document.getElementById('startmilk').style.cursor = "default";
-    document.getElementById('startorange').style.cursor = "default";
-    document.getElementById('starttomato').style.cursor = "default";
-
     // selected element gets `lightgray` backgroundColor
+    // and `isSelected` variable gets the value of the selected element
     if (event.target && event.target.id === "startbread") {
         document.getElementById('startbread').style.backgroundColor = "lightgray";
         isSelected = "startbread";
@@ -137,14 +134,20 @@ function hozzaAdas() {
         // highlight next element in startTable made from newList array
         if (startList[0] === "milk") {
             document.getElementById('startmilk').style.backgroundColor = "lightgray";
+            document.getElementById('startorange').style.backgroundColor = "white";
+            document.getElementById('starttomato').style.backgroundColor = "white";
             isSelected = "startmilk";
         }
         if (startList[0] === "orange") {
             document.getElementById('startorange').style.backgroundColor = "lightgray";
+            document.getElementById('startmilk').style.backgroundColor = "white";
+            document.getElementById('starttomato').style.backgroundColor = "white";
             isSelected = "startorange";
         }
         if (startList[0] === "tomato") {
             document.getElementById('starttomato').style.backgroundColor = "lightgray";
+            document.getElementById('startmilk').style.backgroundColor = "white";
+            document.getElementById('startorange').style.backgroundColor = "white";
             isSelected = "starttomato";
         }
 
@@ -178,14 +181,20 @@ function hozzaAdas() {
         // highlight next element in startTable made from newList array
         if (startList[0] === "bread") {
             document.getElementById('startbread').style.backgroundColor = "lightgray";
+            document.getElementById('startorange').style.backgroundColor = "white";
+            document.getElementById('starttomato').style.backgroundColor = "white";
             isSelected = "startbread";
         }
         if (startList[0] === "orange") {
             document.getElementById('startorange').style.backgroundColor = "lightgray";
+            document.getElementById('startbread').style.backgroundColor = "white";
+            document.getElementById('starttomato').style.backgroundColor = "white";
             isSelected = "startorange";
         }
         if (startList[0] === "tomato") {
             document.getElementById('starttomato').style.backgroundColor = "lightgray";
+            document.getElementById('startbread').style.backgroundColor = "white";
+            document.getElementById('startorange').style.backgroundColor = "white";
             isSelected = "starttomato";
         }
 
@@ -219,14 +228,20 @@ function hozzaAdas() {
         // highlight next element in startTable made from newList array
         if (startList[0] === "bread") {
             document.getElementById('startbread').style.backgroundColor = "lightgray";
+            document.getElementById('startmilk').style.backgroundColor = "white";
+            document.getElementById('starttomato').style.backgroundColor = "white";
             isSelected = "startbread";
         }
         if (startList[0] === "milk") {
             document.getElementById('startmilk').style.backgroundColor = "lightgray";
+            document.getElementById('startbread').style.backgroundColor = "white";
+            document.getElementById('starttomato').style.backgroundColor = "white";
             isSelected = "startmilk";
         }
         if (startList[0] === "tomato") {
             document.getElementById('starttomato').style.backgroundColor = "lightgray";
+            document.getElementById('startbread').style.backgroundColor = "white";
+            document.getElementById('startmilk').style.backgroundColor = "white";
             isSelected = "starttomato";
         }
 
@@ -259,16 +274,25 @@ function hozzaAdas() {
 
         // highlight next element in startTable made from newList array
         if (startList[0] === "bread") {
+            isSelected = "startbread";
             document.getElementById('startbread').style.backgroundColor = "lightgray";
+            document.getElementById('startmilk').style.backgroundColor = "white";
+            document.getElementById('startorange').style.backgroundColor = "white";
             isSelected = "startbread";
         }
         if (startList[0] === "milk") {
-            document.getElementById('startmilk').style.backgroundColor = "lightgray";
             isSelected = "startmilk";
+            document.getElementById('startmilk').style.backgroundColor = "lightgray";
+            document.getElementById('startbread').style.backgroundColor = "white";
+            document.getElementById('startorange').style.backgroundColor = "white";
+            
         }
         if (startList[0] === "orange") {
-            document.getElementById('startorange').style.backgroundColor = "lightgray";
             isSelected = "startorange";
+            document.getElementById('startorange').style.backgroundColor = "lightgray";
+            document.getElementById('startbread').style.backgroundColor = "white";
+            document.getElementById('startmilk').style.backgroundColor = "white";
+            
         }
 
     }
