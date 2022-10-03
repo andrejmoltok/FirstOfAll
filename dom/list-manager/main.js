@@ -72,6 +72,7 @@ var endTable = document.getElementById('endTable');
 startTable.addEventListener('click', kivalaszto);
 
 function kivalaszto(event) {
+    var isSelected = "";
     // set initial backgroundColor for selected element within startTable
     document.getElementById('startbread').style.backgroundColor = "white";
     document.getElementById('startmilk').style.backgroundColor = "white";
@@ -86,30 +87,38 @@ function kivalaszto(event) {
     document.getElementById('starttomato').style.cursor = "default";
 
     // selected element gets `lightgray` backgroundColor
-    if (event.target && event.target.id === 'startbread') {
+    if (event.target && event.target.id === "startbread") {
         document.getElementById('startbread').style.backgroundColor = "lightgray";
-        console.log("EVT = ",event.target.id);
+        isSelected = "startbread";
+        console.log("selected",isSelected);
+        console.log("EVT = ",event.target);
         console.log(startTable.children[0].id);
-    } else if (event.target && event.target.matches('#startmilk')) {
+    } else if (event.target && event.target.id === 'startmilk') {
         document.getElementById('startmilk').style.backgroundColor = "lightgray";
+        isSelected = "startmilk";
+        console.log("selected",isSelected);
         console.log("EVT = ",event.target);
         console.log(startTable.children[1].id);
-    } else if (event.target && event.target.matches('#startorange')) {
+    } else if (event.target && event.target.id === 'startorange') {
         document.getElementById('startorange').style.backgroundColor = "lightgray";
+        isSelected = "startorange";
+        console.log("selected",isSelected);
         console.log("EVT = ",event.target);
         console.log(startTable.children[2].id);
-    } else if (event.target && event.target.matches('#starttomato')) {
+    } else if (event.target && event.target.id === 'starttomato') {
         document.getElementById('starttomato').style.backgroundColor = "lightgray";
+        isSelected = "starttomato";
+        console.log("selected",isSelected);
         console.log("EVT = ",event.target);
         console.log(startTable.children[3].id);
     }
-    return event.target.id;
+    return isSelected;
 }
 
 funcTable.addEventListener('click', hozzaAdas);
 
 function hozzaAdas(event) {
-    if (event.target === startTable.children[0].id) {
+    if (kivalaszto() === "startbread") {
         var sL = startList.splice(startList.indexOf(startList[0]) + 1,startList.length);
         console.log(removed);
         startTable.deleteRow(0);
