@@ -53,60 +53,68 @@ rendezo(startList);
 rendezo(functionList);
 rendezo(endList);
 
+// table variables
 var startTable = document.getElementById('startTable');
 var funcTable = document.getElementById('funcTable');
 var endTable = document.getElementById('endTable');
 
 
+// // isSelected string used for checking if one element is selected or not already
+// var isSelected = "";
 
-// isSelected string used for checking if one element is selected or not already
-var isSelected = "";
+// // set default cursor style for elements within startTable
+// document.getElementById('startbread').style.cursor = "default";
+// document.getElementById('startmilk').style.cursor = "default";
+// document.getElementById('startorange').style.cursor = "default";
+// document.getElementById('starttomato').style.cursor = "default";
 
-// set default cursor style for elements within startTable
-document.getElementById('startbread').style.cursor = "default";
-document.getElementById('startmilk').style.cursor = "default";
-document.getElementById('startorange').style.cursor = "default";
-document.getElementById('starttomato').style.cursor = "default";
+// selected function to select following element in list
+// using the index of current element
+
+function selected(idx) {
+    var select = [0,0,0,0];
+    select[idx]++;
+    return select;
+};
 
 // eventlistener for startTable and startList
-startTable.addEventListener('click', kivalaszto);
+startTable.addEventListener('click', kijelolo);
 
-function kivalaszto(event) {
+function kijelolo(event) {
     // selected element gets `lightgray` backgroundColor
     // and `isSelected` variable gets the value of the selected element
     if (event.target && event.target.id === "startbread") {
         document.getElementById('startbread').style.backgroundColor = "lightgray";
-        isSelected = "startbread";
-        // console.log("selected",isSelected);
+        selected(0);
+        console.log(selected(0));
         // console.log("EVT = ",event.target);
         // console.log(startTable.children[0].id);
     } else if (event.target && event.target.id === 'startmilk') {
         document.getElementById('startmilk').style.backgroundColor = "lightgray";
-        isSelected = "startmilk";
-        // console.log("selected",isSelected);
+        selected(1);
+        console.log(selected(1));
         // console.log("EVT = ",event.target);
         // console.log(startTable.children[1].id);
     } else if (event.target && event.target.id === 'startorange') {
         document.getElementById('startorange').style.backgroundColor = "lightgray";
-        isSelected = "startorange";
-        // console.log("selected",isSelected);
+        selected(2);
+        console.log(selected(2));
         // console.log("EVT = ",event.target);
         // console.log(startTable.children[2].id);
     } else if (event.target && event.target.id === 'starttomato') {
         document.getElementById('starttomato').style.backgroundColor = "lightgray";
-        isSelected = "starttomato";
-        // console.log("selected",isSelected);
+        selected(3);
+        console.log(selected(3));
         // console.log("EVT = ",event.target);
         // console.log(startTable.children[3].id);
     }
-    return isSelected;
 }
 
 funcTable.addEventListener('click', hozzaAdas);
 
-function hozzaAdas() {
+function hozzaAdas(event) {
     
-    if (isSelected == "startbread") {
+    if (select === [1,0,0,0]) {
         //console.log("selected = ",isSelected);
 
         // create a newList variable from startList.splice configuration
@@ -133,23 +141,23 @@ function hozzaAdas() {
 
         // highlight next element in startTable made from newList array
         if (startList[0] === "milk") {
-            isSelected = "startmilk";
+            selected(1);
             document.getElementById('startmilk').style.backgroundColor = "lightgray";
         }
 
         if (startList[0] === "orange") {
-            isSelected = "startorange";
+            selected(2);
             document.getElementById('startorange').style.backgroundColor = "lightgray";
         }
 
         if (startList[0] === "tomato") {
-            isSelected = "starttomato";
+            selected(3);
             document.getElementById('starttomato').style.backgroundColor = "lightgray";
         }
 
     }
     
-    if (isSelected === "startmilk") {
+    if (select === [0,1,0,0]) {
         //console.log("selected = ",isSelected);
 
         // create a newList variable from startList.splice configuration
@@ -176,23 +184,23 @@ function hozzaAdas() {
 
         // highlight next element in startTable made from newList array
         if (startList[0] === "bread") {
-            isSelected = "startbread";
+            selected(0);
             document.getElementById('startbread').style.backgroundColor = "lightgray";
         }
 
         if (startList[0] === "orange") {
-            isSelected = "startorange";
+            selected(2);
             document.getElementById('startorange').style.backgroundColor = "lightgray";
         }
 
         if (startList[0] === "tomato") {
-            isSelected = "starttomato";
+            selected(3);
             document.getElementById('starttomato').style.backgroundColor = "lightgray";
         }
 
     }
     
-    if (isSelected === "startorange") {
+    if (select === [0,0,1,0]) {
         //console.log("selected = ",isSelected);
 
         // create a newList variable from startList.splice configuration
@@ -221,23 +229,23 @@ function hozzaAdas() {
 
         // highlight next element in startTable made from newList array
         if (startList[0] === "bread") {
-            isSelected = "startbread";
+            selected(0);
             document.getElementById('startbread').style.backgroundColor = "lightgray";
         }
 
         if (startList[0] === "milk") {
-            isSelected = "startmilk";
+            selected(1);
             document.getElementById('startmilk').style.backgroundColor = "lightgray";
         }
 
         if (startList[0] === "tomato") {
-            isSelected = "starttomato";
+            selected(3);
             document.getElementById('starttomato').style.backgroundColor = "lightgray";
         }
 
     }
     
-    if (isSelected === "starttomato") {
+    if (select === [0,0,0,1]) {
         //console.log("selected = ",isSelected);
 
         // create a newList variable from startList.splice configuration
@@ -264,17 +272,17 @@ function hozzaAdas() {
 
         // highlight next element in startTable made from newList array
         if (startList[0] === "bread") {
-            isSelected = "startbread";
+            selected(0);
             document.getElementById('startbread').style.backgroundColor = "lightgray";
         }
 
         if (startList[0] === "milk") {
-            isSelected = "startmilk";
+            selected(1);
             document.getElementById('startmilk').style.backgroundColor = "lightgray";
         }
 
         if (startList[0] === "orange") {
-            isSelected = "startorange";
+            selected(2);
             document.getElementById('startorange').style.backgroundColor = "lightgray";
         }
 
