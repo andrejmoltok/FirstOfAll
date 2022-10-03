@@ -58,24 +58,14 @@ var startTable = document.getElementById('startTable');
 var funcTable = document.getElementById('funcTable');
 var endTable = document.getElementById('endTable');
 
-
-// // isSelected string used for checking if one element is selected or not already
-// var isSelected = "";
-
-// // set default cursor style for elements within startTable
-// document.getElementById('startbread').style.cursor = "default";
-// document.getElementById('startmilk').style.cursor = "default";
-// document.getElementById('startorange').style.cursor = "default";
-// document.getElementById('starttomato').style.cursor = "default";
-
-// selected function to select following element in list
+// clicked function to select following element in list
 // using the index of current element
-
-function selected(idx) {
-    var select = [0,0,0,0];
-    select[idx]++;
-    return select;
-};
+function clicked(item) {
+    var clickedList = new Array(startList.length).fill(false);
+    clickedList[item] === true;
+    return clickedList;
+}
+console.log(clicked(1));
 
 // eventlistener for startTable and startList
 startTable.addEventListener('click', kijelolo);
