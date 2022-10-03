@@ -18,7 +18,7 @@ var startList = "bread,milk,orange,tomato".split(',');
 //console.log(startList);
 var functionList = "Up,Add,Remove,Down".split(',');
 //console.log(functionList);
-var endList = " , , , ".split(',');
+var endList = [];
 //console.log(endList);
 
 // replacement function for 3 repetitive functions doing the same thing
@@ -26,36 +26,24 @@ function rendezo(list) {
     list.forEach((v) => {
         var z = document.createElement("TR");
         var t = document.createTextNode(v);
-        if (list === startList) {
-            //v === "bread" || v === "milk" || v === "orange" || v === "tomato"
+        if (v === "bread" || v === "milk" || v === "orange" || v === "tomato") {
             z.setAttribute("id", "start" + v);
             //console.log(z);
             z.appendChild(t);
+            document.getElementById("startTable").appendChild(z);
         }
-        if (list === functionList) {
-            //v === "Up" || v === ">>" || v === "<<" || v === "Down"
+        if (v === "Up" || v === "Add" || v === "Remove" || v === "Down") {
             var x = document.createElement("INPUT");
             x.setAttribute("id", "func" + v);
             x.setAttribute("type", "button");
             x.value = v;
+            document.getElementById("funcTable").appendChild(x);
             //console.log(z);
         }
         if (list === endList) {
-            //v === "' '"
             z.setAttribute("id", "end" + v);
             //console.log(z);
             z.appendChild(t);
-        }
-        
-        //console.log(t);
-        if (list === startList) {
-            //v === "bread" || v === "milk" || v === "orange" || v === "tomato"
-            document.getElementById("startTable").appendChild(z);
-        } else if (list === functionList) {
-            //v === "Up" || v === ">>" || v === "<<" || v === "Down"
-            document.getElementById("funcTable").appendChild(x);
-        } else if (list === endList) {
-            //v === "' '"
             document.getElementById("endTable").appendChild(z);
         }
     });
@@ -71,8 +59,10 @@ var endTable = document.getElementById('endTable');
 
 startTable.addEventListener('click', kivalaszto);
 
+var isSelected = "";
+
 function kivalaszto(event) {
-    var isSelected = "";
+    
     // set initial backgroundColor for selected element within startTable
     document.getElementById('startbread').style.backgroundColor = "white";
     document.getElementById('startmilk').style.backgroundColor = "white";
@@ -90,27 +80,27 @@ function kivalaszto(event) {
     if (event.target && event.target.id === "startbread") {
         document.getElementById('startbread').style.backgroundColor = "lightgray";
         isSelected = "startbread";
-        console.log("selected",isSelected);
-        console.log("EVT = ",event.target);
-        console.log(startTable.children[0].id);
+        // console.log("selected",isSelected);
+        // console.log("EVT = ",event.target);
+        // console.log(startTable.children[0].id);
     } else if (event.target && event.target.id === 'startmilk') {
         document.getElementById('startmilk').style.backgroundColor = "lightgray";
         isSelected = "startmilk";
-        console.log("selected",isSelected);
-        console.log("EVT = ",event.target);
-        console.log(startTable.children[1].id);
+        // console.log("selected",isSelected);
+        // console.log("EVT = ",event.target);
+        // console.log(startTable.children[1].id);
     } else if (event.target && event.target.id === 'startorange') {
         document.getElementById('startorange').style.backgroundColor = "lightgray";
         isSelected = "startorange";
-        console.log("selected",isSelected);
-        console.log("EVT = ",event.target);
-        console.log(startTable.children[2].id);
+        // console.log("selected",isSelected);
+        // console.log("EVT = ",event.target);
+        // console.log(startTable.children[2].id);
     } else if (event.target && event.target.id === 'starttomato') {
         document.getElementById('starttomato').style.backgroundColor = "lightgray";
         isSelected = "starttomato";
-        console.log("selected",isSelected);
-        console.log("EVT = ",event.target);
-        console.log(startTable.children[3].id);
+        // console.log("selected",isSelected);
+        // console.log("EVT = ",event.target);
+        // console.log(startTable.children[3].id);
     }
     return isSelected;
 }
@@ -118,14 +108,19 @@ function kivalaszto(event) {
 funcTable.addEventListener('click', hozzaAdas);
 
 function hozzaAdas(event) {
-    if (kivalaszto() === "startbread") {
-        var sL = startList.splice(startList.indexOf(startList[0]) + 1,startList.length);
-        console.log(removed);
-        startTable.deleteRow(0);
-        startTable.deleteRow(1);
-        startTable.deleteRow(2);
-        startTable.deleteRow(3);
-        rendezo(sL);
+    if (isSelected == "startbread") {
+        console.log("selected = ",isSelected);
+        var newList = startList.splice(startList.indexOf(startList[0]) + 1,startList.length-1);
+        console.log(newList);
+        startTable.deleteRow(-1);
+        startTable.deleteRow(-1);
+        startTable.deleteRow(-1);
+        startTable.deleteRow(-1);
+        var enderList = endList;
+        enderList[0] = "bread";
+        console.log(enderList);
+        rendezo(newList);
+        rendezo(enderList);
     }
 }
 

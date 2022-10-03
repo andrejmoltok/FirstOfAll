@@ -26,7 +26,6 @@ table, td {
 }
 
 
-
 #funcTable {
     display: flex;
     flex-flow: column nowrap;
