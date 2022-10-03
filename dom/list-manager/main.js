@@ -114,7 +114,7 @@ funcTable.addEventListener('click', hozzaAdas);
 
 function hozzaAdas(event) {
     
-    if (select === [1,0,0,0]) {
+    if (selected(0)) {
         //console.log("selected = ",isSelected);
 
         // create a newList variable from startList.splice configuration
@@ -143,21 +143,17 @@ function hozzaAdas(event) {
         if (startList[0] === "milk") {
             selected(1);
             document.getElementById('startmilk').style.backgroundColor = "lightgray";
-        }
-
-        if (startList[0] === "orange") {
+        } else if (startList[0] === "orange") {
             selected(2);
             document.getElementById('startorange').style.backgroundColor = "lightgray";
-        }
-
-        if (startList[0] === "tomato") {
+        } else if (startList[0] === "tomato") {
             selected(3);
             document.getElementById('starttomato').style.backgroundColor = "lightgray";
         }
 
     }
     
-    if (select === [0,1,0,0]) {
+    if (selected(1)) {
         //console.log("selected = ",isSelected);
 
         // create a newList variable from startList.splice configuration
@@ -186,21 +182,17 @@ function hozzaAdas(event) {
         if (startList[0] === "bread") {
             selected(0);
             document.getElementById('startbread').style.backgroundColor = "lightgray";
-        }
-
-        if (startList[0] === "orange") {
+        } else if (startList[0] === "orange") {
             selected(2);
             document.getElementById('startorange').style.backgroundColor = "lightgray";
-        }
-
-        if (startList[0] === "tomato") {
+        } else if (startList[0] === "tomato") {
             selected(3);
             document.getElementById('starttomato').style.backgroundColor = "lightgray";
         }
 
     }
     
-    if (select === [0,0,1,0]) {
+    if (selected(2)) {
         //console.log("selected = ",isSelected);
 
         // create a newList variable from startList.splice configuration
@@ -231,21 +223,17 @@ function hozzaAdas(event) {
         if (startList[0] === "bread") {
             selected(0);
             document.getElementById('startbread').style.backgroundColor = "lightgray";
-        }
-
-        if (startList[0] === "milk") {
+        } else if (startList[0] === "milk") {
             selected(1);
             document.getElementById('startmilk').style.backgroundColor = "lightgray";
-        }
-
-        if (startList[0] === "tomato") {
+        } else if (startList[0] === "tomato") {
             selected(3);
             document.getElementById('starttomato').style.backgroundColor = "lightgray";
         }
 
     }
     
-    if (select === [0,0,0,1]) {
+    if (selected(3)) {
         //console.log("selected = ",isSelected);
 
         // create a newList variable from startList.splice configuration
@@ -274,14 +262,10 @@ function hozzaAdas(event) {
         if (startList[0] === "bread") {
             selected(0);
             document.getElementById('startbread').style.backgroundColor = "lightgray";
-        }
-
-        if (startList[0] === "milk") {
+        } else if (startList[0] === "milk") {
             selected(1);
             document.getElementById('startmilk').style.backgroundColor = "lightgray";
-        }
-
-        if (startList[0] === "orange") {
+        } else if (startList[0] === "orange") {
             selected(2);
             document.getElementById('startorange').style.backgroundColor = "lightgray";
         }
