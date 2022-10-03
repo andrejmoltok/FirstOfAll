@@ -196,6 +196,8 @@ function hozzaAdas() {
         //console.log("selected = ",isSelected);
 
         // create a newList variable from startList.splice configuration
+        // ezt azért használtam mert változhat hogy hanyadik indexen marad
+        // a többi elem a startListben
         var removed = startList.splice(startList.indexOf(startList[2]),1);
 
         // set endList first element to startList first element
