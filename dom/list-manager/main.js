@@ -133,22 +133,18 @@ function hozzaAdas() {
 
         // highlight next element in startTable made from newList array
         if (startList[0] === "milk") {
-            document.getElementById('startmilk').style.backgroundColor = "lightgray";
-            document.getElementById('startorange').style.backgroundColor = "white";
-            document.getElementById('starttomato').style.backgroundColor = "white";
             isSelected = "startmilk";
+            document.getElementById('startmilk').style.backgroundColor = "lightgray";
         }
+
         if (startList[0] === "orange") {
-            document.getElementById('startorange').style.backgroundColor = "lightgray";
-            document.getElementById('startmilk').style.backgroundColor = "white";
-            document.getElementById('starttomato').style.backgroundColor = "white";
             isSelected = "startorange";
+            document.getElementById('startorange').style.backgroundColor = "lightgray";
         }
+
         if (startList[0] === "tomato") {
-            document.getElementById('starttomato').style.backgroundColor = "lightgray";
-            document.getElementById('startmilk').style.backgroundColor = "white";
-            document.getElementById('startorange').style.backgroundColor = "white";
             isSelected = "starttomato";
+            document.getElementById('starttomato').style.backgroundColor = "lightgray";
         }
 
     }
@@ -180,22 +176,18 @@ function hozzaAdas() {
 
         // highlight next element in startTable made from newList array
         if (startList[0] === "bread") {
-            document.getElementById('startbread').style.backgroundColor = "lightgray";
-            document.getElementById('startorange').style.backgroundColor = "white";
-            document.getElementById('starttomato').style.backgroundColor = "white";
             isSelected = "startbread";
+            document.getElementById('startbread').style.backgroundColor = "lightgray";
         }
+
         if (startList[0] === "orange") {
-            document.getElementById('startorange').style.backgroundColor = "lightgray";
-            document.getElementById('startbread').style.backgroundColor = "white";
-            document.getElementById('starttomato').style.backgroundColor = "white";
             isSelected = "startorange";
+            document.getElementById('startorange').style.backgroundColor = "lightgray";
         }
+
         if (startList[0] === "tomato") {
-            document.getElementById('starttomato').style.backgroundColor = "lightgray";
-            document.getElementById('startbread').style.backgroundColor = "white";
-            document.getElementById('startorange').style.backgroundColor = "white";
             isSelected = "starttomato";
+            document.getElementById('starttomato').style.backgroundColor = "lightgray";
         }
 
     }
@@ -227,22 +219,18 @@ function hozzaAdas() {
 
         // highlight next element in startTable made from newList array
         if (startList[0] === "bread") {
-            document.getElementById('startbread').style.backgroundColor = "lightgray";
-            document.getElementById('startmilk').style.backgroundColor = "white";
-            document.getElementById('starttomato').style.backgroundColor = "white";
             isSelected = "startbread";
+            document.getElementById('startbread').style.backgroundColor = "lightgray";
         }
+
         if (startList[0] === "milk") {
-            document.getElementById('startmilk').style.backgroundColor = "lightgray";
-            document.getElementById('startbread').style.backgroundColor = "white";
-            document.getElementById('starttomato').style.backgroundColor = "white";
             isSelected = "startmilk";
+            document.getElementById('startmilk').style.backgroundColor = "lightgray";
         }
+
         if (startList[0] === "tomato") {
-            document.getElementById('starttomato').style.backgroundColor = "lightgray";
-            document.getElementById('startbread').style.backgroundColor = "white";
-            document.getElementById('startmilk').style.backgroundColor = "white";
             isSelected = "starttomato";
+            document.getElementById('starttomato').style.backgroundColor = "lightgray";
         }
 
     }
@@ -276,23 +264,16 @@ function hozzaAdas() {
         if (startList[0] === "bread") {
             isSelected = "startbread";
             document.getElementById('startbread').style.backgroundColor = "lightgray";
-            document.getElementById('startmilk').style.backgroundColor = "white";
-            document.getElementById('startorange').style.backgroundColor = "white";
-            isSelected = "startbread";
         }
+
         if (startList[0] === "milk") {
             isSelected = "startmilk";
             document.getElementById('startmilk').style.backgroundColor = "lightgray";
-            document.getElementById('startbread').style.backgroundColor = "white";
-            document.getElementById('startorange').style.backgroundColor = "white";
-            
         }
+
         if (startList[0] === "orange") {
             isSelected = "startorange";
             document.getElementById('startorange').style.backgroundColor = "lightgray";
-            document.getElementById('startbread').style.backgroundColor = "white";
-            document.getElementById('startmilk').style.backgroundColor = "white";
-            
         }
 
     }
