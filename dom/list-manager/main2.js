@@ -1,4 +1,4 @@
-window.onload = displayAll;
+// window.onload = displayAll;
 
 // main DIV container for three tables
 var div = document.createElement('DIV');
@@ -23,7 +23,7 @@ var endTable = document.getElementById(mainData[2]);
 // lists of content going inside of mainData tables
 var startList = "bread,milk,orange,tomato".split(',');
 var functionList = "Up,Add,Remove,Down".split(',');
-var endList = [];
+var endList = ['test'];
 const myColumns = [startList, functionList, endList];
 
 // replacement function for 3 repetitive functions doing the same thing
@@ -99,9 +99,10 @@ const myFunc = Object.values(myOperand);
 function myExecute(func, index) {myFunc[func](index);}
 
 function displayCol() {
-    //console.log("start " + startList);
-    //console.log("functions " + functionList);
-    //console.log("end " + endList);
+    console.log("displayCol function working...");
+    console.log("start " + startList);
+    console.log("functions " + functionList);
+    console.log("end " + endList);
 
     start.addEventListener('click', function(event) {
         if (event.target && event.target.id === startList[0]) {
