@@ -16,9 +16,9 @@ mainData.forEach((v) => {
 });
 
 // table variables
-var startTable = document.getElementById('start');
-var funcTable = document.getElementById('func');
-var endTable = document.getElementById('end');
+var startTable = document.getElementById(mainData[0]);
+var funcTable = document.getElementById(mainData[1]);
+var endTable = document.getElementById(mainData[2]);
 
 // lists of content going inside of mainData tables
 var startList = "bread,milk,orange,tomato".split(',');
@@ -28,27 +28,21 @@ const myColumns = [startList, functionList, endList];
 
 // replacement function for 3 repetitive functions doing the same thing
 function displayAll(column,index) {
-    if (index === 0) {
-        column[index].forEach((v) => {
-            var z = document.createElement("TR");
-            var t = document.createTextNode(v);
-            z.setAttribute("id", v);
-            z.appendChild(t);
-            document.getElementById(mainData[0]).appendChild(z);
-        });
-    } else if (index === 1) {
+    if (index === 1) {
         column[index].forEach((v) => {
             var x = document.createElement("INPUT");
             x.setAttribute("id", v);
             x.setAttribute("type", "button");
             x.value = v;
-            document.getElementById(mainData[1]).appendChild(x);
+            document.getElementById(mainData[index]).appendChild(x);
         });
-    } else if (index === 2) {
+    } else {
         column[index].forEach((v) => {
+            var z = document.createElement("TR");
+            var t = document.createTextNode(v);
             z.setAttribute("id", v);
             z.appendChild(t);
-            document.getElementById(mainData[2]).appendChild(z);
+            document.getElementById(mainData[index]).appendChild(z);
         });
     }
 }
