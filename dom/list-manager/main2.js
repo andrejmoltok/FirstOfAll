@@ -16,14 +16,14 @@ mainData.forEach((v) => {
 });
 
 // table variables
-var startTable = document.getElementById(mainData[0]);
-var funcTable = document.getElementById(mainData[1]);
-var endTable = document.getElementById(mainData[2]);
+var start = document.getElementById('start');
+var func = document.getElementById('func');
+var end = document.getElementById('end');
 
 // lists of content going inside of mainData tables
 var startList = "bread,milk,orange,tomato".split(',');
 var functionList = "Up,Add,Remove,Down".split(',');
-var endList = ['test'];
+var endList = [];
 const myColumns = [startList, functionList, endList];
 
 // replacement function for 3 repetitive functions doing the same thing
