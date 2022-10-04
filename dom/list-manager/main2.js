@@ -5,7 +5,7 @@ var div = document.createElement('DIV');
 div.setAttribute('id','container');
 
 // names for three tables to create
-var mainData = "start,function,end".split(',');
+var mainData = "start,func,end".split(',');
 
 // forEach for mainData array to generate tables
 mainData.forEach((v) => {
@@ -24,32 +24,38 @@ var endTable = document.getElementById('end');
 var startList = "bread,milk,orange,tomato".split(',');
 var functionList = "Up,Add,Remove,Down".split(',');
 var endList = [];
+const myColumns = [startList, functionList, endList];
 
 // replacement function for 3 repetitive functions doing the same thing
-function rendezo(list) {
-    list.forEach((v) => {
-        var z = document.createElement("TR");
-        var t = document.createTextNode(v);
-        if (list === startList) {
+function displayAll(column,index) {
+    if (index === 0) {
+        column[index].forEach((v) => {
+            var z = document.createElement("TR");
+            var t = document.createTextNode(v);
             z.setAttribute("id", v);
             z.appendChild(t);
-            document.getElementById("start").appendChild(z);
-        } else if (list === functionList) {
+            document.getElementById(mainData[0]).appendChild(z);
+        });
+    } else if (index === 1) {
+        column[index].forEach((v) => {
             var x = document.createElement("INPUT");
             x.setAttribute("id", v);
             x.setAttribute("type", "button");
             x.value = v;
-            document.getElementById("function").appendChild(x);
-        } else if (list === endList) {
+            document.getElementById(mainData[1]).appendChild(x);
+        });
+    } else if (index === 2) {
+        column[index].forEach((v) => {
             z.setAttribute("id", v);
             z.appendChild(t);
-            document.getElementById("end").appendChild(z);}
-});
+            document.getElementById(mainData[2]).appendChild(z);
+        });
+    }
 }
 
-rendezo(startList);
-rendezo(functionList);
-rendezo(endList);
+displayAll(myColumns,0);
+displayAll(myColumns,1);
+displayAll(myColumns,2);
 
 function clicked(elem) {
   clickedList = new Array(startList.length).fill(false);
@@ -91,17 +97,19 @@ const myOperand = {
     },
 };
 
-const myFunc = Array.from(Object.values(myOperand)); 
+const myFunc = Object.values(myOperand); 
 //const myFunc = [addClicked, removeClicked, upClicked, downClicked];
+
+//console.log(myFunc);
 
 function myExecute(func, index) {myFunc[func](index);}
 
-function displayAll() {
-    console.log("start " + startList);
-    console.log("functions " + functionList);
-    console.log("end " + endList);
+function displayCol() {
+    //console.log("start " + startList);
+    //console.log("functions " + functionList);
+    //console.log("end " + endList);
 
-    startTable.addEventListener('click', function(event) {
+    start.addEventListener('click', function(event) {
         if (event.target && event.target.id === startList[0]) {
             unclick();
             if (startList.includes("milk") || startList.includes("orange") || startList.includes("tomato")) {
@@ -141,7 +149,9 @@ function displayAll() {
         }
     });
 
-    funcTable.addEventListener('click', function(event) {
-
+    func.addEventListener('click', function(event) {
+        if (event.target && event.target.id === 'Add') {
+            myExecute(1,clickedList.indexOf(true));
+        }
     });
 }
