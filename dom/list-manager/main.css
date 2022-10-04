@@ -19,14 +19,13 @@ table, td {
     gap: 30px;
 }
 
-#startTable {
+#start {
     text-align: center;
     font-size: var(--font);
     width: var(--wide);
 }
 
-
-#funcTable {
+#function {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -40,7 +39,7 @@ input[type=button]{
     height: 24px;
 }
 
-#endTable {
+#end {
     text-align: center;
     font-size: var(--font);
     width: var(--wide);
