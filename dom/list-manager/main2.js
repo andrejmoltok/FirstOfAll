@@ -104,49 +104,52 @@ function displayCol() {
     console.log("functions " + functionList);
     console.log("end " + endList);
 
-    start.addEventListener('click', function(event) {
-        if (event.target && event.target.id === startList[0]) {
-            unclick();
-            if (startList.includes("milk") || startList.includes("orange") || startList.includes("tomato")) {
-                document.getElementById('milk').style.backgroundColor = "white";
-                document.getElementById('orange').style.backgroundColor = "white";
-                document.getElementById('tomato').style.backgroundColor = "white";
-            }
-            document.getElementById('bread').style.backgroundColor = "lightgray";
-            clicked(0);
-        } else if (event.target && event.target.id === startList[1]) {
-            unclick();
-            if (startList.includes("bread") || startList.includes("orange") || startList.includes("tomato")) {
-                document.getElementById('bread').style.backgroundColor = "white";
-                document.getElementById('orange').style.backgroundColor = "white";
-                document.getElementById('tomato').style.backgroundColor = "white";
-            }
-            document.getElementById('milk').style.backgroundColor = "lightgray";
-            clicked(1);
-        } else if (event.target && event.target.id === startList[2]) {
-            unclick();
-            if (startList.includes("bread") || startList.includes("milk") || startList.includes("tomato")) {
-                document.getElementById('bread').style.backgroundColor = "white";
-                document.getElementById('milk').style.backgroundColor = "white";
-                document.getElementById('tomato').style.backgroundColor = "white";
-            }
-            document.getElementById('orange').style.backgroundColor = "lightgray";
-            clicked(2);
-        } else if (event.target && event.target.id === startList[3]) {
-            unclick();
-            if (startList.includes("bread") || startList.includes("milk") || startList.includes("orange")) {
-                document.getElementById('bread').style.backgroundColor = "white";
-                document.getElementById('milk').style.backgroundColor = "white";
-                document.getElementById('orange').style.backgroundColor = "white";
-            }
-            document.getElementById('tomato').style.backgroundColor = "lightgray";
-            clicked(3);
-        }
-    });
-
-    func.addEventListener('click', function(event) {
-        if (event.target && event.target.id === 'Add') {
-            myExecute(1,clickedList.indexOf(true));
-        }
-    });
 }
+
+start.addEventListener('click', function(event) {
+    if (event.target && event.target.id === startList[0]) {
+        if (startList.includes("milk") || startList.includes("orange") || startList.includes("tomato")) {
+            document.getElementById('milk').style.backgroundColor = "white";
+            document.getElementById('orange').style.backgroundColor = "white";
+            document.getElementById('tomato').style.backgroundColor = "white";
+        }
+        document.getElementById('bread').style.backgroundColor = "lightgray";
+        clicked(0);
+    } else if (event.target && event.target.id === startList[1]) {
+        if (startList.includes("bread") || startList.includes("orange") || startList.includes("tomato")) {
+            document.getElementById('bread').style.backgroundColor = "white";
+            document.getElementById('orange').style.backgroundColor = "white";
+            document.getElementById('tomato').style.backgroundColor = "white";
+        }
+        document.getElementById('milk').style.backgroundColor = "lightgray";
+        clicked(1);
+    } else if (event.target && event.target.id === startList[2]) {
+        if (startList.includes("bread") || startList.includes("milk") || startList.includes("tomato")) {
+            document.getElementById('bread').style.backgroundColor = "white";
+            document.getElementById('milk').style.backgroundColor = "white";
+            document.getElementById('tomato').style.backgroundColor = "white";
+        }
+        document.getElementById('orange').style.backgroundColor = "lightgray";
+        clicked(2);
+    } else if (event.target && event.target.id === startList[3]) {
+        if (startList.includes("bread") || startList.includes("milk") || startList.includes("orange")) {
+            document.getElementById('bread').style.backgroundColor = "white";
+            document.getElementById('milk').style.backgroundColor = "white";
+            document.getElementById('orange').style.backgroundColor = "white";
+        }
+        document.getElementById('tomato').style.backgroundColor = "lightgray";
+        clicked(3);
+    }
+});
+
+func.addEventListener('click', function(event) {
+    if (event.target && event.target.id === 'Add') {
+        
+    } else if (event.target && event.target.id === 'Remove') {
+
+    } else if (event.target && event/target.id === 'Up') {
+
+    } else if (event.target && event.target.id === 'Down') {
+        
+    }
+});
