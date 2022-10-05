@@ -107,36 +107,25 @@ function displayCol() {
 }
 
 start.addEventListener('click', function(event) {
+    var iterator = startList.entries();
     if (event.target && event.target.id === startList[0]) {
-        if (startList.includes("milk") || startList.includes("orange") || startList.includes("tomato")) {
-            document.getElementById('milk').style.backgroundColor = "white";
-            document.getElementById('orange').style.backgroundColor = "white";
-            document.getElementById('tomato').style.backgroundColor = "white";
-        }
-        document.getElementById('bread').style.backgroundColor = "lightgray";
+        startList.forEach((v) => {
+            document.getElementById(v).style.backgroundColor = "white";});
+        document.getElementById(startList[0]).style.backgroundColor = "lightgray";
         clicked(0);
     } else if (event.target && event.target.id === startList[1]) {
-        if (startList.includes("bread") || startList.includes("orange") || startList.includes("tomato")) {
-            document.getElementById('bread').style.backgroundColor = "white";
-            document.getElementById('orange').style.backgroundColor = "white";
-            document.getElementById('tomato').style.backgroundColor = "white";
-        }
+        startList.forEach((v) => {
+            document.getElementById(v).style.backgroundColor = "white";});
         document.getElementById('milk').style.backgroundColor = "lightgray";
         clicked(1);
     } else if (event.target && event.target.id === startList[2]) {
-        if (startList.includes("bread") || startList.includes("milk") || startList.includes("tomato")) {
-            document.getElementById('bread').style.backgroundColor = "white";
-            document.getElementById('milk').style.backgroundColor = "white";
-            document.getElementById('tomato').style.backgroundColor = "white";
-        }
+        startList.forEach((v) => {
+            document.getElementById(v).style.backgroundColor = "white";});
         document.getElementById('orange').style.backgroundColor = "lightgray";
         clicked(2);
     } else if (event.target && event.target.id === startList[3]) {
-        if (startList.includes("bread") || startList.includes("milk") || startList.includes("orange")) {
-            document.getElementById('bread').style.backgroundColor = "white";
-            document.getElementById('milk').style.backgroundColor = "white";
-            document.getElementById('orange').style.backgroundColor = "white";
-        }
+        startList.forEach((v) => {
+            document.getElementById(v).style.backgroundColor = "white";});
         document.getElementById('tomato').style.backgroundColor = "lightgray";
         clicked(3);
     }
