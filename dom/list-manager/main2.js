@@ -1,3 +1,5 @@
+
+
 // lists of content going inside of mainData tables
 var startList = "bread,milk,orange,tomato,apple,salt".split(',');
 var functionList = "Up,Add,Remove,Down".split(',');
@@ -35,8 +37,8 @@ const myOperand = {
 	},
 
 	remove: (item) => {
-		endList.splice(item, 1);
 		startList.push(endList[item]);
+		endList.splice(item, 1);
 		clicked(item);
 	},
 
@@ -62,9 +64,7 @@ function displayCol(column) {
 	console.log("start " + startList);
 	console.log("functions " + functionList);
 	console.log("end " + endList);
-
 }
-
 
 function displayAll() {
 	const tabla = document.createElement("TABLE");
@@ -74,17 +74,24 @@ function displayAll() {
 	    for (let j = 0; j < myColumns.length; j++) { //columns
 				//console.log(myColumns.length + " - " + j);
 		    const cella = document.createElement("TD");
-		    const cellaAdat = document.createTextNode(`${myColumns[j][i] ?? " "}`);
+		    const cellaAdat = document.createTextNode(`${myColumns[j][i] ?? ""}`);
+				// create selectable id's for eventlisteners
+				if (myColumns[j][i] === undefined) {
+					cella.setAttribute('id','_');
+				} else { 
+					cella.setAttribute('id',myColumns[j][i]);
+				}
+
 		    cella.appendChild(cellaAdat);
 		    sor.appendChild(cella);
 	  }
 	  tTest.appendChild(sor);
 	}
-  
 	tabla.appendChild(tTest);
 	tabla.setAttribute("border", "2");
 	tabla.setAttribute("border-collapse","collapse");
 	div.appendChild(tabla);
-  }
+}
 
-  displayAll();
+
+displayAll();

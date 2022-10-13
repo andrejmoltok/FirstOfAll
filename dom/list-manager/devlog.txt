@@ -3,7 +3,5 @@ Devlog for list-manager exercise
 1.) create 3 column table from lists - CHECK
 
 2.) create visuals for moving elements inside the list(Up,Down) and ltr-rtl(Add,Remove) - TODO
-    2.) a.) create visual moving for Add and Remove
-    2.) b.) create visual moving for Up and Down
-
-but HOW?!
+    2.) a.) created attributes for each element on the table within displayAll() function - CHECK
+    2.) b.) 
