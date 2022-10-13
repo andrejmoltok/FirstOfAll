@@ -110,39 +110,6 @@ function displayAll() {
     console.log("end " + endList);
 }
 
-// eventlistener for startTable and startList
-startTable.addEventListener('click', kijelolo);
-
-function kijelolo(event) {
-    // selected element gets `lightgray` backgroundColor
-    // and `isSelected` variable gets the value of the selected element
-    if (event.target && event.target.id === "startbread") {
-        document.getElementById('startbread').style.backgroundColor = "lightgray";
-        selected(0);
-        console.log(selected(0));
-        // console.log("EVT = ",event.target);
-        // console.log(startTable.children[0].id);
-    } else if (event.target && event.target.id === 'startmilk') {
-        document.getElementById('startmilk').style.backgroundColor = "lightgray";
-        selected(1);
-        console.log(selected(1));
-        // console.log("EVT = ",event.target);
-        // console.log(startTable.children[1].id);
-    } else if (event.target && event.target.id === 'startorange') {
-        document.getElementById('startorange').style.backgroundColor = "lightgray";
-        selected(2);
-        console.log(selected(2));
-        // console.log("EVT = ",event.target);
-        // console.log(startTable.children[2].id);
-    } else if (event.target && event.target.id === 'starttomato') {
-        document.getElementById('starttomato').style.backgroundColor = "lightgray";
-        selected(3);
-        console.log(selected(3));
-        // console.log("EVT = ",event.target);
-        // console.log(startTable.children[3].id);
-    }
-}
-
 funcTable.addEventListener('click', hozzaAdas);
 
 function hozzaAdas() {

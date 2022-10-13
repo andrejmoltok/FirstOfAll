@@ -1,46 +1,9 @@
-:root {
-    --wide: 70px;
-    --font: 18px;
-}
-
-table, td {
-    border: 1px solid black;
-    font-size: 18px;
+table, tr, td {
+    border: 2px solid black;
 }
 
 #container {
     margin: auto auto;
     width: 440px;
     height: 100px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-}
-
-#start {
-    text-align: center;
-    font-size: var(--font);
-    width: var(--wide);
-}
-
-#func {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-}
-
-input[type=button]{
-    text-align: center;
-    font-size: 14px;
-    width: 70px;
-    height: 24px;
-}
-
-#end {
-    text-align: center;
-    font-size: var(--font);
-    width: var(--wide);
 }
