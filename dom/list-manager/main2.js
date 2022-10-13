@@ -15,14 +15,14 @@ var clickedStartList = new Array(startList.length).fill(false);
 function clickedStart(elem) {
   clickedStartList[elem] = true;
   console.log(clickedStartList);
-	//console.log(clickedStartList.indexOf(true));
+	//return clickedStartList;
 }
 
 var clickedEndList = new Array(endList.length).fill(false);
 function clickedEnd(elem) {
   clickedEndList[elem] = true;
   console.log(clickedEndList);
-	//console.log(clickedEndList.indexOf(true));
+	//return clickedEndList;
 }
 
 function unclickStart() {clickedStartList = new Array(startList.length).fill(false);}
@@ -120,8 +120,6 @@ let upMe = document.getElementById('Up');
 let addMe = document.getElementById('Add');
 let removeMe = document.getElementById('Remove');
 let downMe = document.getElementById('Down');
-
-//let myInterval = setInterval(addMe,1000);
 
 addMe.addEventListener('click', function() {
 	myExecute(1,clickedStartList.indexOf(true));
