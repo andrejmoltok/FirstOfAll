@@ -13,40 +13,41 @@ function clicked(elem) {
   clickedList = new Array(startList.length).fill(false);
   clickedList[elem] = true;
   console.log(clickedList);
-  return clickedList;
+  return clickedList.indexOf(true);
 }
 
 function unclick() {clickedList = new Array(startList.length).fill(false);}
 
 const myOperand = {
-    up: (item) => {
-        if(item != 0) {
-            var temp = startList[item];
-            startList[item] = startList[item - 1];
-            startList[item - 1] = temp;    
-            clicked(item - 1);
-        } else {clicked(0);}
-    },
+	up: (item) => {
+		if(item != 0) {
+			var temp = startList[item];
+			startList[item] = startList[item - 1];
+			startList[item - 1] = temp;    
+			clicked(item - 1);
+		} else {clicked(0);}
+	},
 
-    add: (item) => {
-        endList.push(startList[item]);
-        startList.splice(item, 1);    
-        clicked(0);
-    },
+	add: (item) => {
+		endList.push(startList[item]);
+		startList.splice(item, 1);    
+		clicked(item);
+	},
 
-    remove: (item) => {
-        startList.splice(item, 1);    
-        clicked(0);
-    },
+	remove: (item) => {
+		endList.splice(item, 1);
+		startList.push(endList[item]);
+		clicked(item);
+	},
 
-    down: (item) => {
-        if(item != startList.length-1) {
-            var temp = startList[item];
-            startList[item] = startList[item + 1];
-            startList[item + 1] = temp;
-            clicked(item + 1);
-        } else {clicked(startList.length-1);}
-    },
+	down: (item) => {
+		if(item != startList.length-1) {
+			var temp = startList[item];
+			startList[item] = startList[item + 1];
+			startList[item + 1] = temp;
+			clicked(item + 1);
+		} else {clicked(startList.length-1);}
+	},
 };
 
 const myFunc = Object.values(myOperand); 
@@ -57,30 +58,33 @@ const myFunc = Object.values(myOperand);
 function myExecute(func, index) {myFunc[func](index);}
 
 function displayCol(column) {
-    console.log("displayCol function working...");
-    console.log("start " + startList);
-    console.log("functions " + functionList);
-    console.log("end " + endList);
-    
+	console.log("displayCol function working...");
+	console.log("start " + startList);
+	console.log("functions " + functionList);
+	console.log("end " + endList);
+
 }
 
-// replacement function for 3 repetitive functions doing the same thing
+
 function displayAll() {
-    const tabla = document.createElement('TABLE');
-    const ttest = document.createElement('TBODY');
-    for (let i = 0; i < myColumns[0].length; i++) {
-        const sor = document.createElement('TR');
-        for (let j = 0; j < 3; j++) {
-            const sorElem = document.createElement('TD');
-            const sorAdat = document.createTextNode(`${myColumns[j][i]??""}`);
-            sorElem.appendChild(sorAdat);
-            sor.appendChild(sorElem);
-        }
-        ttest.appendChild(sor);
-    }
-    tabla.appendChild(ttest);
-    tabla.setAttribute("border-collapse","separate");
-    div.appendChild(tabla);
-}
+	const tabla = document.createElement("TABLE");
+	const tTest = document.createElement("TBODY");
+	for (let i = 0; i < Math.max(startList.length, functionList.length, endList.length); i++) { //rows
+		const sor = document.createElement("TR");
+	    for (let j = 0; j < myColumns.length; j++) { //columns
+				//console.log(myColumns.length + " - " + j);
+		    const cella = document.createElement("TD");
+		    const cellaAdat = document.createTextNode(`${myColumns[j][i] ?? " "}`);
+		    cella.appendChild(cellaAdat);
+		    sor.appendChild(cella);
+	  }
+	  tTest.appendChild(sor);
+	}
+  
+	tabla.appendChild(tTest);
+	tabla.setAttribute("border", "2");
+	tabla.setAttribute("border-collapse","collapse");
+	div.appendChild(tabla);
+  }
 
-displayAll();
+  displayAll();
