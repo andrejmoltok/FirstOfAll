@@ -1,7 +1,5 @@
-
-
 // lists of content going inside of mainData tables
-var startList = "bread,milk,orange,tomato,apple,salt".split(',');
+var startList = "bread,milk,orange,tomato,apple,salt,honey,beer".split(',');
 var functionList = "Up,Add,Remove,Down".split(',');
 var endList = [];
 const myColumns = [startList, functionList, endList];
@@ -9,6 +7,8 @@ const myColumns = [startList, functionList, endList];
 // main DIV container for three tables
 var div = document.createElement('DIV');
 div.setAttribute('id','container');
+div.style.display = "flex";
+div.style.justifyContent = "center";
 document.body.appendChild(div);
 
 function clicked(elem) {
@@ -71,6 +71,9 @@ function displayAll() {
 	const tTest = document.createElement("TBODY");
 	for (let i = 0; i < Math.max(startList.length, functionList.length, endList.length); i++) { //rows
 		const sor = document.createElement("TR");
+		div.style.maxWidth = "225px";
+		div.style.height = `${Math.max(startList.length, functionList.length, endList.length)*24 + 
+			(Math.max(startList.length, functionList.length, endList.length)*3)}px`;
 	    for (let j = 0; j < myColumns.length; j++) { //columns
 				//console.log(myColumns.length + " - " + j);
 		    const cella = document.createElement("TD");
@@ -88,8 +91,6 @@ function displayAll() {
 	  tTest.appendChild(sor);
 	}
 	tabla.appendChild(tTest);
-	tabla.setAttribute("border", "2");
-	tabla.setAttribute("border-collapse","collapse");
 	div.appendChild(tabla);
 }
 
