@@ -5,3 +5,6 @@ Devlog for list-manager exercise
 2.) create visuals for moving elements inside the list(Up,Down) and ltr-rtl(Add,Remove) - TODO
     2.) a.) created attributes for each element on the table within displayAll() function - CHECK
     2.) b.) get teh index of elemenet from startList for everything -  HCECK
+    2.) c.) added backtick in setAttribute for `cella` TD's with clicked(i) functionality - CHECK
+    2.) d.) create eventlisteners for the functionList items - TODO
+        2.) d.) I.) added eval() to create variables dynamically - CHECK
