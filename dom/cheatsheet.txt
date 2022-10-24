@@ -1,0 +1,58 @@
+'use strict'
+
+const myDataBase = ["+", "1", "2", "3", "-", "4", "5", "6", "*", "7", "8", "9", "/", ".", "0", "=",];
+let buttonValue = [];
+let row = [];
+var content = document.getElementsByTagName("tr");
+content[0].innerHTML = `<td><input type="button" value="c" onclick="clr()" /> </td> <td colspan="3"><input type="text" id="textval" /></td>`
+var mytext = document.getElementById("textval");
+
+for (let i = 0; i < 4; i++) {
+  row.push("");
+  for (let j = 0; j < 4; j++) {
+    if (i==3 && j==3) {
+    buttonValue[j] = `<td><input type="button" value="=" onclick="evaluation()" /> </td>`;
+    }else {
+    buttonValue[j] = `<td><input type="button" value="` +  myDataBase[i * 4 + j] + `" onclick="display('` +  myDataBase[i * 4 + j] +  `')" /> </td>`;
+    }
+    row[i] = row[i] + buttonValue[j];
+  }
+  content[i+1].innerHTML = row[i];
+}
+
+function display(val) {
+  mytext.value += val;
+}
+function evaluation() {
+  let x = mytext.value
+  let y = eval(x);
+  //let y = 28;
+  mytext.value = y;
+}
+function clr() {
+  mytext.value = "";
+}
+
+function displayAll() {
+    const tbl = document.createElement("table");
+    const tblBody = document.createElement("tbody");
+    for (let i = 0; i < Math.max(startList.length, functionList.length, endList.length); i++) { //rows
+      const row = document.createElement("tr");
+      for (let j = 0; j < 3; j++) { //columns
+        const cell = document.createElement("td");
+        const cellText = document.createTextNode(`   ${myColoumns[j][i]?? "______"} `);
+        cell.appendChild(cellText);
+        row.appendChild(cell);
+      }
+      tblBody.appendChild(row);
+    }
+  
+    tbl.appendChild(tblBody);
+    document.body.appendChild(tbl);
+    tbl.setAttribute("border", "2");
+  }
+
+  displayAll();
+  var myClick = 2;
+  myExecute(1, myClick);
+  displayAll();
