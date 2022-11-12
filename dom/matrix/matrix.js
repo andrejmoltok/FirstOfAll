@@ -25,13 +25,13 @@ function myMx(mX) {
   const container = document.getElementById('container');
   container.style.margin = "auto";
   container.style.width = "1000px";
-  container.style.height = "300px";
+  container.style.height = "200px";
   container.style.display = "flex";
   container.style.flexDirection = "row";
 
   const inBox = document.createElement('DIV');
-  inBox.style.width = "200px";
-  inBox.style.height = "300px";
+  inBox.style.width = "100px";
+  inBox.style.height = "200px";
   container.appendChild(inBox);
 
   const myPara = document.createElement('P');
@@ -59,7 +59,7 @@ function myMx(mX) {
     const out = document.createElement('DIV');
     out.setAttribute('id', 'mutate'+j);
     out.style.width = "100px";
-    out.style.height = "300px";
+    out.style.height = "200px";
     container.appendChild(out);
 
     const myPara2 = document.createElement('P');
