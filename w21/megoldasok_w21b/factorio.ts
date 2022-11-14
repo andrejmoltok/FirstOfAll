@@ -4,7 +4,7 @@
 function calculateFactorial(num:number){
     let factorio = 1;
     for (var i = num; i >= 1; i--){
-    factorio *= i;
+        factorio *= i;
     }
     console.log(factorio);
 }
