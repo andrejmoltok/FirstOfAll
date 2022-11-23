@@ -71,10 +71,10 @@ function myMx(mX) {
     out.style.height = "200px";
     container.appendChild(out);
 
-    const myTbl2 = document.createElement('P');
-    myTbl2.style.textAlign = "center";
-    myTbl2.innerText = "Forgatás  " + j;
-    out.appendChild(myTbl2);
+    const myPara = document.createElement('P');
+    myPara.style.textAlign = "center";
+    myPara.innerText = "Forgatás  " + j;
+    out.appendChild(myPara);
   }
 
 
