@@ -5,8 +5,6 @@ const elemCount = document.getElementById('elemCount');
 const mySubmit = document.getElementById('mySubmit');
 
 const myDiv = document.getElementById('myDiv');
-const inputDiv = document.getElementById('inputDiv');
-const elemCountDiv = document.getElementById('elemCountDiv');
 
 const main = document.getElementById('main');
 
