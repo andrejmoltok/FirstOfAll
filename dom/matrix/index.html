@@ -3,14 +3,27 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Mátrix Elforgatási Táblázat</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
     </head>
-    <body onload="myMx(Mx4x2)">
-        <div id="container">
-            
+    <body>
+        <div id="main">
+            <div id="myDiv">
+                <div id="inputDiv">
+                    <p>Mátrix elemei:</p>
+                    <input type="text" id="myInput">
+                    <p>Súgó: pl. 1,2,3,4,5,6,7,8</p>
+                </div>
+                <div id="elemCountDiv">
+                    <p>Elemek Soronként:</p>
+                    <input type="number" id="elemCount" style="width: 35px;">
+                    <p>Súgó: altömbök kezdeti mérete pl. 4</p>
+                </div>
+                <input type="submit" value="Forgasd!" id="mySubmit">
+            </div>
+            <div id="container">
+            </div>
         </div>
         <script src="matrix_table.js"></script>
     </body>
