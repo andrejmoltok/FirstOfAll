@@ -26,10 +26,8 @@ mySubmit.addEventListener('click',function() {
     while (arr[0]) {
         output.push(arr.splice(0,elemCount.value));        
     }
-    output[0].map((col,c) => output.map((row,r) => output[r][c] = Number(output[r][c])));
-
+    output[0].map((col,c) => output.map((row,r) => output[r][c] = Number(output[r][c])))
     const container = document.getElementById('container');
-    
     if (container.children.length === 0) {
       myMx(output);
     } else {
@@ -75,26 +73,50 @@ function myMx(mX) {
     myPara.style.textAlign = "center";
     myPara.innerText = "Forgatás  " + j;
     out.appendChild(myPara);
+
+    if (j < 5) {
+    mX[0].map(function(col, c) {
+      const myTbl = document.createElement('TABLE'+j);
+      const myTr = document.createElement('TR'+j);
+      myTbl.style.margin = "auto";
+      myTbl.style.border = "1px solid black";
+      myTbl.style.borderCollapse = "collapse";
+      mX.map((row, r) => {
+        for (let i = 1; i <= 4; i++) {
+            document.createElement('TD' + i);
+        }
+        document.getElementById('TD1').style.width = "10px";
+        document.getElementById('TD1').style.border = "1px solid black";
+        document.getElementById('TD2').style.width = "10px";
+        document.getElementById('TD2').style.border = "1px solid black";
+        document.getElementById('TD3').style.width = "10px";
+        document.getElementById('TD3').style.border = "1px solid black";
+        document.getElementById('TD4').style.width = "10px";
+        document.getElementById('TD4').style.border = "1px solid black";
+        document.getElementById('TD1').innerText = mX[mX.length - 1 - r][c];
+        document.getElementById('TD2').innerText = mX[r][c];
+        document.getElementById('TD3').innerText = mX[r][mX[0].length - 1 - c];
+        document.getElementById('TD4').innerText = mX[mX.length - 1 - r][mX[0].length - 1 - c];
+        document.getElementById('TR1').appendChild('TD1');
+        document.getElementById('TR2').appendChild('TD2');
+        document.getElementById('TR3').appendChild('TD3');
+        document.getElementById('TR4').appendChild('TD4');
+        });
+        myTbl.appendChild('TR1');
+        myTbl.appendChild('TR2');
+        myTbl.appendChild('TR3');
+        myTbl.appendChild('TR4');
+        document.getElementById('mutate1').appendChild(myTbl);
+        document.getElementById('mutate2').appendChild(myTbl);
+        document.getElementById('mutate3').appendChild(myTbl);
+        document.getElementById('mutate4').appendChild(myTbl);
+      });
+    }
   }
 
 
   
-  mX[0].map(function(col, c) {
-    const myTbl = document.createElement('TABLE');
-    const myTr = document.createElement('TR');
-    myTbl.style.margin = "auto";
-    myTbl.style.border = "1px solid black";
-    myTbl.style.borderCollapse = "collapse";
-    mX.map((row, r) => {
-      const myTd = document.createElement('TD');
-      myTd.style.width = "10px";
-      myTd.style.border = "1px solid black";
-      myTd.innerText = mX[r][c];
-      myTr.appendChild(myTd);
-    });
-    myTbl.appendChild(myTr);
-    document.getElementById('mutate1').appendChild(myTbl);
-  });
+  
   
   
   mX[0].map(function(col, c) {
@@ -104,11 +126,7 @@ function myMx(mX) {
     myTbl.style.border = "1px solid black";
     myTbl.style.borderCollapse = "collapse";
     mX.map((row, r) => {
-      const myTd = document.createElement('TD');
-      myTd.style.width = "10px";
-      myTd.style.border = "1px solid black";
-      myTd.innerText = mX[mX.length - 1 - r][c];
-      myTr.appendChild(myTd);
+      
     });
     myTbl.appendChild(myTr);
     document.getElementById('mutate2').appendChild(myTbl);
@@ -124,7 +142,7 @@ function myMx(mX) {
       const myTd = document.createElement('TD');
       myTd.style.width = "10px";
       myTd.style.border = "1px solid black";
-      myTd.innerText = mX[r][mX[0].length - 1 - c];
+      
       myTr.appendChild(myTd);
     });
     myTbl.appendChild(myTr);
@@ -141,7 +159,7 @@ function myMx(mX) {
       const myTd = document.createElement('TD');
       myTd.style.width = "10px";
       myTd.style.border = "1px solid black";
-      myTd.innerText = mX[mX.length - 1 - r][mX[0].length - 1 - c];
+      
       myTr.appendChild(myTd);
     });
     myTbl.appendChild(myTr);
